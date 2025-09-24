@@ -158,3 +158,20 @@ deepskyblue;
 navy;
   text-decoration: none !important;
 }
+#jumbotron-text {
+  background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
+  padding: 1.5em;
+}
+
+#jumbotron-text h1 {
+  color: var(--blue);
+  font-size: 2.5em;
+  font-weight: 400; /* Don't make the text bold */
+  line-height: 1.25em;
+}
+
+#jumbotron-text p {
+  color: 
+white;
+  margin: 1em 0; /* Add space above and below paragraph */
+  line-height: 1.25em;
