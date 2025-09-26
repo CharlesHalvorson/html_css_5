@@ -184,3 +184,22 @@ footer{
 #footer_text{
   color: white;
 }
+#sorry{
+  color: white;
+  border: solid #980B20;
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  left: 50px;
+  background-color: #262320;
+  border-radius: 5px;
+}
+#buttons{
+  position: relative;
+  left: 50px;
+  top: 50px;
+  color: white;
+  border: solid #980B20;
+  background-color: #262320;
+  border-radius: 5px;
+}
