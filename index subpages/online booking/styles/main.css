@@ -191,3 +191,15 @@ p{
   background-color: #262320;
   border-radius: 5px;
 }
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #262320;
+  text-align: center;
+  padding: 1em 0;
+}
+
+#footer_text{
+  color: white;
+}
