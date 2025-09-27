@@ -64,10 +64,6 @@ lightgrey;
   width: 100%;
 }
 
-#header-bottom-nav ul li:last-of-type {
-  border-bottom: block;
-}
-
 #header-bottom-nav ul li a {
 /*   background-color: yellow; */
   color: white;
