@@ -22,47 +22,6 @@ h1, h2, h3, h4, h5, h6 {
 #header-logo {
   text-align: center;
   padding: 15px 0;
-  /* display:flex; */
-}
-
-/*these styles apply to all tags inside a nav isnide a banner*/ 
-header nav a {
-  display: inline-block;
-  text-decoration: none;
-  color:  #262320;
-  font-weight: 700;
-  display:flex;
-}
-
-#header-top-nav {
-  display:flex;
-}
-
-#header-top-nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: darkslategray;
-}
-
-
-#header-top-nav ul li a {
-  padding: 0.5em 1em 0.5em 0;
-  margin-right: 2em;
-  display:flex;
-}
-
-#header-top-nav ul li:nth-child(3) a,
-#header-top-nav ul li:last-child a {
-  margin-right: 0;
-}
-
-#header-top-nav ul a:hover {
-  text-decoration: underline;
-}
-
-#header-top-nav ul li a span {
-  color: deepskyblue;
 }
 
 #header-contact-mobile-nav {
@@ -74,7 +33,7 @@ header nav a {
 }
 
 #mobile-nav {
-  color: #980B20;
+  color: white;
   padding: 01.5em;
   cursor: pointer;
   /* display:flex; */
@@ -94,7 +53,7 @@ header nav a {
   border-top: 1px solid 
 lightgrey;
   /* background-color: red; */
-  display: block;
+  display: none;
   align-items: flex-start;
   flex-direction: column;
 }
@@ -127,28 +86,6 @@ lightgrey;
 deepskyblue;
 }
 
-.btn {
-  background-color: 
-deepskyblue;
-  color: 
-white;
-  padding: 0.75em 1.5em !important;
-}
-
-.btn.header-btn {
-  padding: 1em 1.5em !important;
-}
-
-.btn.header-btn:hover {
-  background-color: 
-deepskyblue;
-}
-
-.btn:hover {
-  background-color: 
-darkgrey;
-  text-decoration: none
-}
 #picture{
   float: left;
   background-color:#262320 ;
@@ -158,12 +95,12 @@ darkgrey;
   display: flex;
   height: 48px;
   border: solid;
-  color: #980B20;
+  color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-#Logo{
-  color: #980B20;
+#title{
+  color: white;
   position: absolute;
   /* display: flex; */
   left: 50px;

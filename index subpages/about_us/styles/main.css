@@ -73,7 +73,7 @@ header nav a {
 }
 
 #mobile-nav {
-  color: #980B20;
+  color: white;
   padding: 01.5em;
   cursor: pointer;
   /* display:flex; */
@@ -157,12 +157,12 @@ darkgrey;
   display: flex;
   height: 48px;
   border: solid;
-  color: #980B20;
+  color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 #Logo{
-  color: #980B20;
+  color: white;
   position: absolute;
   /* display: flex; */
   left: 50px;
@@ -186,7 +186,7 @@ footer{
 }
 #sorry{
   color: white;
-  border: solid #980B20;
+  border: solid white;
   display: inline-block;
   padding: 5px;
   position: absolute;
