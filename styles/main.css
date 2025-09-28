@@ -122,3 +122,22 @@ footer{
 #footer_text{
     color: white;
 }
+#sorry{
+  color: white;
+  border: solid white;
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  left: 50px;
+  background-color: #262320;
+  border-radius: 5px;
+}
+#buttons{
+  position: relative;
+  left: 50px;
+  top: 50px;
+  color: white;
+  border: solid white;
+  background-color: #262320;
+  border-radius: 5px;
+}
