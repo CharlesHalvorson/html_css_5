@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 * {
   max-width: 100%;
   max-height: 100%;
   box-sizing: border-box;
 }
 
+:root {
+  --navy: rgb(0, 0, 128);
+  --blue: rgb(0, 191, 255);
+  --blue-light: rgb(69, 208, 255);
+}
+
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -19,145 +23,88 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  border-top: 0.5em solid 
-navy;
-  box-shadow: 0 5px 10px 
-rgba(0,0,0,.2);
-}
-
-#header-grid {
-  display: grid;
-  grid-template-areas: 
-    "header-logo"
-    "header-top-nav" 
-    "header-contact-mobile-nav"
-    "header-bottom-nav";
-    grid-template-columns: 100%;
-    grid-template-rows: 120px 40px 48px 1fr;  
+  border-top: 0.5em solid var(--navy);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 #header-logo {
-  grid-area: header-logo;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 0; /* Adds space on the top and bottom of the div */
 }
-/*these styles apply to all tags inside a nav isnide a banner*/ 
+
+/* These styles apply to a tags inside a nav inside the header */
 header nav a {
-  display: inline-block;
-  text-decoration: none;
-  color: 
-navy;
+  text-decoration:none;
+  color: var(--navy);
   font-weight: 700;
 }
 
-#header-top-nav {
-  grid-area: header-top-nav;
-}
-
 #header-top-nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: yellow; */
+  display: flex; /* Places block items side-by-side */
+  justify-content: center; /* Centers flex content horizontally */
+  margin: 0.5em 0; /* Adds space above/below the top nav */
 }
 
-#header-top-nav ul li a {
-  padding: 0.5em 1em 0.5em 0;
-  margin-right: 2em;
+#header-top-nav a {
+  margin-right: 2em; /* Adds space between hyperlinks */
 }
 
-#header-top-nav ul li:nth-child(3) a,
-#header-top-nav ul li:last-child a {
-  margin-right: 0;
+#header-top-nav li:nth-child(3) a {
+  margin-right: 0; /* Removes added space after the last one */
 }
 
-#header-top-nav ul a:hover {
+#header-top-nav a:hover {
   text-decoration: underline;
 }
 
-#header-top-nav ul li a span {
-  color: 
-deepskyblue;
+#header-top-nav span {
+  color: var(--blue);
 }
 
 #header-contact-mobile-nav {
-  grid-area: header-contact-mobile-nav;
-  background-color: 
-navy;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--navy);
+  display: flex; /* Places the contact button and mobile nav on same horizontal line */
+  justify-content: space-between; /* Places the contact button on left and mobile navigation on right */
+  align-items: center; /* Vertically centers the contact button with the mobile navigation */
 }
 
-#mobile-nav {
-  color: 
-white;
-  padding: 0.5em;
-  cursor: pointer;
-}
-
-#header-bottom-nav {
-  grid-area: header-bottom-nav;
-}
-
-#header-bottom-nav ul {
-  border-top: 1px solid 
-lightgrey;
-/*   background-color: red; */
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-#header-bottom-nav ul li {
-  border-bottom: 1px solid 
-lightgrey;
-  width: 100%;
-}
-
-#header-bottom-nav ul li:last-of-type {
-  border-bottom: none;
-}
-
-#header-bottom-nav ul li a {
-/*   background-color: yellow; */
-  color: 
-darkslategrey;
-  font-size: 1.2em;
-  border-bottom: 0.25em solid 
-transparent;
-  padding: 20px;
-  width: 100%;
-}
-
-#header-bottom-nav ul li a:hover,
-#header-bottom-nav ul li a.active{
-  color: 
-deepskyblue;
-}
-
+/* Class selectors start with a period */
 .btn {
-  background-color: 
-deepskyblue;
-  color: 
-white;
-  padding: 0.75em 1.5em !important;
-}
-
-.btn.header-btn {
-  padding: 1em 1.5em !important;
-}
-
-.btn.header-btn:hover {
-  background-color: 
-deepskyblue;
+  background-color: var(--blue);
+  color: white;
+  padding: 1em 1.5em; /* Adds space between border and text. This code adds more space on the left/right than top/bottom */
+  display: inline-block; /* Hyperlinks are inline elements by default. This will make the parent element's height the same as the child element's height */
+  text-decoration:none;
+  font-weight: 700;
 }
 
 .btn:hover {
-  background-color: 
-navy;
-  text-decoration: none !important;
+  background-color: var(--blue-light);
 }
+
+#mobile-nav {
+  color: white;
+  font-size: 2em; /* Makes the navigation icon bigger */
+  margin: 0 0.25em; /* Adds space to the left/right of the mobile nav */
+  cursor: pointer;
+}
+
+
+#header-bottom-nav li {
+  border-bottom: 1px solid lightgrey;
+}
+
+#header-bottom-nav a {
+  font-size: 1.2em; /* Increases font-size 20% */
+  display: block; /* A tags are inline elements by default. Making this a block allows you to add top/bottom padding and margin, and makes it full width */
+  padding: 20px;
+}
+
+#header-bottom-nav .active, #header-bottom-nav a:hover {
+  color: var(--blue);
+}
+
+
 #jumbotron-text {
   background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
   padding: 1.5em;
@@ -166,12 +113,81 @@ navy;
 #jumbotron-text h1 {
   color: var(--blue);
   font-size: 2.5em;
-  font-weight: 400; /* Don't make the text bold */
+  font-weight: normal; /* Don't make the text bold */
   line-height: 1.25em;
 }
 
 #jumbotron-text p {
-  color: 
-white;
+  color: white;
   margin: 1em 0; /* Add space above and below paragraph */
   line-height: 1.25em;
+}
+
+
+#about-us {
+  padding: 30px;
+  margin-top: 50px;
+}
+
+/* Source: https://stackoverflow.com/a/6382036/6629315 */
+#about-us hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+#about-us h4 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  margin: 20px 0;
+  color: var(--navy);
+}
+
+#about-us h2 {
+  font-size: 2em;
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.25em;
+}
+
+#about-us img {
+  width: 150px;
+  height: 5px;
+  /* If text-align: center doesn't work, set the display property to block, and use margin: 0 auto instead */
+  margin: 15px auto;
+  display: block;
+}
+#about-us p {
+  font-size: 1.25em;
+  text-align: center;
+  margin: 15px 0;
+  line-height: 1.5em;
+}
+#about-cards article {
+  margin: 25px 0;
+}
+#about-cards .card-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 1em;
+}
+#about-cards .card-header i {
+  color: var(--blue);
+  font-size: 1.5em;
+}
+#about-cards .card-header h3 {
+  font-size: 1.25em;
+}
+#about-cards blockquote {
+  border-left: 2px solid #ccc;
+  padding-left: 20px; /* separation between border and contents */
+  margin-left: 15px; /* Space outside of the border */
+  font-size: 1.1em;
+  line-height: 1.25em;
+  color: #555;
+}
