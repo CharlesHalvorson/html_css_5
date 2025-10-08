@@ -233,3 +233,23 @@ white;
   margin: 0 auto;
   box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674);
 }
+#company_titles{
+  border: white solid;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.623);
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.company_logos{
+  width: 150px;
+  height: 150px;
+  border: black solid;
+  border-radius: 5px;
+  background-color: white;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
