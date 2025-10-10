@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techsolve Solutions</title>
     <link rel="stylesheet" href="styles/reste.css">
+    <link rel="stylesheet" href="styles/carosel.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="scripts/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,18 +38,7 @@
         </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="carousel">
-              <div class="item a">A</div>
-              <div class="item b">B</div>
-              <div class="item c">C</div>
-              <div class="item d">D</div>
-              <div class="item e">E</div>
-              <div class="item f">F</div>
-            </div>
-          </div>
-          <div class="next">Next</div>
-          <div class="prev">Prev</div>
+        
         <div class="hero">
             <h1>Welcome to TechSolve Solutions</h1>
             <p>Learn about our products and services.</p>
@@ -57,6 +48,35 @@
         <div id="about_us_cluster">
             <p id="about_us">   Techsolve Solutions provides IT support services to assist indiviguals with their computer problems, acting as a mobile or online IT team. Whether you're a startup or an established business, we believe that your IT needs should be supported by experienced professionals. Our team offers varity of services to cater to you organizations unique requirements. Contact us today to learn more.</p>
             <button id=about_us_btn type="button" onclick="location.href='index_subpages/about_us/about_us.html'">Learn More</button>
+        </div>
+        <div><p id="news">News Articles</p></div>
+        <div class="carousel-wrapper">
+            <div class="prev">Prev</div>
+            <div class="container">
+                <div class="carousel">
+                  <div class="item a"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item b"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item c"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item d"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item e"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item f"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                </div>
+            </div>
+            <div class="next">Next</div>
+        </div>
+        <div class="carousel-wrapper-mobile">
+            <div class="prev-mobile">Prev</div>
+            <div class="container-mobile">
+                <div class="carousel-mobile">
+                  <div class="item-mobile a"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item-mobile b"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item-mobile c"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item-mobile d"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item-mobile e"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                  <div class="item-mobile f"><img class="company_logos" src="images_main/placeholder.png" alt=""><button class="carosel_btn"><a href="index_subpages/newsletter/newsletter.html">UNDER CONSTRUCTION</a></button></div>
+                </div>
+            </div>
+            <div class="next-mobile">Next</div>
         </div>
         <div>
             <p id="company_titles">Companys that use our services.</p>
@@ -71,7 +91,8 @@
                     <td><img class="company_logos" src="images_main/space_cube.png" alt=""></td>
                     <td><img class="company_logos" src="images_main/wayne.jpg" alt=""></td>
             </table>
-            
+        </div>
+        
     </main>
     <footer>
         <p><u>TechSolve Solutions ©2025</u></p>
