@@ -1,0 +1,154 @@
+* {
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: hsl(356, 100%, 66%);
+    --red-light: hsl(355, 100%, 74%);
+    --blue-dark: hsl(208, 49%, 24%);
+    --gray-light: hsl(207, 13%, 80%);
+    --gray-medium: hsl(207, 13%, 34%);
+    --gray-dark: hsl(240, 10%, 16%);
+    --gradient1: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --gradient2: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 31%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+    font-family: "Overpass", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+header {
+    background-image: var(--gradient1);
+}
+
+#header-mobile-nav {
+    padding: 16px 16px 8px;
+    display: flex; /* Places the contact button and mobile nav on same horizontal line */
+    justify-content: space-between; /* Places the contact button on left and mobile navigation on right */
+    align-items: center; /* Vertically centers the contact button with the mobile navigation */
+}
+
+#mobile-nav {
+    color: white;
+    font-size: 2em; /* Makes the navigation icon bigger */
+    margin: 0 0.25em; /* Adds space to the left/right of the mobile nav */
+    cursor: pointer;
+}
+
+#header-bottom-nav {
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+#header-bottom-nav li {
+    border-bottom: 1px solid lightgrey;
+}
+
+#header-bottom-nav a {
+    font-size: 1.2em; /* Increases font-size 20% */
+    display: block; /* A tags are inline elements by default. Making this a block allows you to add top/bottom padding and margin, and makes it full width */
+    padding: 20px;
+    text-decoration:none;
+    color: var(--light-red);
+    font-weight: 700;
+}
+
+#header-bottom-nav .active, #header-bottom-nav a:hover {
+    color: var(--red);
+}
+
+#jumbotron {
+    padding: 100px 40px;
+    text-align: center;
+    color: white;
+}
+#jumbotron h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+#jumbotron p {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+}
+
+.btn {
+    padding: 12px 24px 10px;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-filled {
+    background-color: white;
+    color: var(--red);
+}
+
+
+footer {
+    background-color: var(--gray-dark);
+    text-align: center;
+    padding: 100px 40px;
+}
+
+footer h3 {
+    color: white;
+    margin: 20px 0;
+}
+
+footer a {
+    color: var(--gray-light);
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+main{
+    text-align: center;
+    padding: 100px 40px;
+}
+main h2 {
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 40px 0;
+}
+main p {
+    color: var(--gray-medium);
+    font-size: 1.2em;
+    line-height: 1.6em;
+    font-weight: 300;
+    margin: 20px 0;
+}
+main div h2{
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 40px 0;
+}
+#infrastructure{
+    background-color: var(--gray-dark);
+}
