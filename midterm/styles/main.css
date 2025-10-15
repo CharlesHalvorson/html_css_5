@@ -5,6 +5,11 @@
 --GrayB: hsl(273, 4%, 51%);
 --GrayC: hsl(0, 0%, 98%);
 }
+*{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 #mobile-nav{
     display:inline-block;
     padding: 3px;
@@ -110,3 +115,72 @@
     margin: 30px 0;
     color: var(--GrayB);
 }
+footer {
+    background-color: var(--GrayC);
+    text-align: center;
+    padding: 100px 40px;
+}
+
+footer h3 {
+    color: var(--GrayB);
+    margin: 20px 0;
+}
+
+footer a {
+    color: var(--gray-light);
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+main{
+    text-align: center;
+    padding: 100px 40px;
+}
+main h2 {
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 40px 0;
+}
+main p {
+    color: var(--gray-medium);
+    font-size: 1.2em;
+    line-height: 1.6em;
+    font-weight: 300;
+    margin: 20px 0;
+}
+main div h2{
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 40px 0;
+}
+#line{
+    border-bottom: solid var(--GrayB);
+    display:flex;
+    margin: 100px 100px 0px 100px;
+}
+#line2{
+    border-bottom: solid var(--GrayB);
+    display:flex;
+    margin: 10px 10px 0px 10px;
+}
+#logos{
+    margin: 7px;
+}
+.dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .dm-serif-display-regular-italic {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
