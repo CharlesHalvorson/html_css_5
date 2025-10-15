@@ -1,0 +1,112 @@
+:root{
+--BlueA:hsl(256, 26%, 20%);
+--BlueB: hsl(216, 30%, 68%);
+--GrayA: hsl(270, 9%, 17%);
+--GrayB: hsl(273, 4%, 51%);
+--GrayC: hsl(0, 0%, 98%);
+}
+#mobile-nav{
+    display:inline-block;
+    padding: 3px;
+    align-content:end;
+    border: solid black 2px;
+}
+#header-mobile-nav {
+    padding: 24px 16px 16px;
+    display: flex; /* Places the contact button and mobile nav on same horizontal line */
+    justify-content: space-between; /* Places the contact button on left and mobile navigation on right */
+    align-items: center; /* Vertically centers the contact button with the mobile navigation */
+}
+
+#mobile-nav {
+    font-size: 1em; /* Makes the navigation icon bigger */
+    margin: 0 0.25em; /* Adds space to the left/right of the mobile nav */
+    cursor: pointer;
+}
+
+#header-bottom-nav {
+    background-color: var(--BlueA);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+/* #header-bottom-nav li {
+    border-bottom: 1px solid ;
+} */
+
+#header-bottom-nav a {
+    font-size: 1.2em; /* Increases font-size 20% */
+    display: block; /* A tags are inline elements by default. Making this a block allows you to add top/bottom padding and margin, and makes it full width */
+    padding: 20px;
+    text-decoration:none;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+#header-bottom-nav .active, #header-bottom-nav a:hover {
+    border: solid white 2px;
+    margin: 20px
+}
+#jumbotron {
+    padding: 100px 40px;
+    text-align: center;
+    background-color: var(--BlueA);
+    color: white;
+}
+#jumbotron h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#jumbotron h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#jumbotron p {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+}
+
+.btn {
+    padding: 12px 24px 10px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+#jumbotron2 {
+    padding: 100px 40px;
+    text-align: center;
+    background-color: white;
+    color: white;
+}
+#jumbotron2 h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    color: black;
+}
+#jumbotron2 h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    color: black;
+}
+#jumbotron2 p {
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+    color: var(--GrayB);
+}
