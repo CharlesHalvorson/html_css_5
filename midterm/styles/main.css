@@ -50,35 +50,40 @@
     color: white;
     font-weight: 700;
     text-align: center;
+    border: solid var(--BlueA) 2px;
+    font-family: "DM Serif Display";
 }
 
 #header-bottom-nav .active, #header-bottom-nav a:hover {
     border: solid white 2px;
-    margin: 20px
 }
 #jumbotron {
     padding: 100px 40px;
     text-align: center;
     background-color: var(--BlueA);
     color: white;
+    font-family: "DM Serif Display";
 }
 #jumbotron h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
+    font-family: "DM Serif Display";
 }
 #jumbotron h2 {
     font-size: 1.7em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
+    font-family: "DM Serif Display";
 }
 #jumbotron p {
     font-size: 1.4em;
     line-height: 1.4em;
     font-weight: 300;
     margin: 30px 0;
+    font-family: "DM Serif Display";
 }
 
 .btn {
@@ -87,12 +92,14 @@
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-family: "DM Serif Display";
 }
 #jumbotron2 {
     padding: 100px 40px;
     text-align: center;
     background-color: white;
     color: white;
+    font-family: "DM Serif Display";
 }
 #jumbotron2 h1 {
     font-size: 2.5em;
@@ -100,6 +107,7 @@
     font-weight: 500;
     margin: 30px 0;
     color: black;
+    font-family: "DM Serif Display";
 }
 #jumbotron2 h2 {
     font-size: 1.7em;
@@ -107,6 +115,7 @@
     font-weight: 500;
     margin: 30px 0;
     color: black;
+    font-family: "DM Serif Display";
 }
 #jumbotron2 p {
     font-size: 1em;
@@ -114,16 +123,19 @@
     font-weight: 300;
     margin: 30px 0;
     color: var(--GrayB);
+    font-family: "DM Serif Display";
 }
 footer {
-    background-color: var(--GrayC);
+    background-color: lightgrey;
     text-align: center;
     padding: 100px 40px;
+    font-family: "DM Serif Display";
 }
 
 footer h3 {
     color: var(--GrayB);
     margin: 20px 0;
+    font-family: "DM Serif Display";
 }
 
 footer a {
@@ -131,6 +143,7 @@ footer a {
     text-decoration: none;
     padding: 5px;
     display: inline-block;
+    font-family: "DM Serif Display";
 }
 
 footer a:hover {
@@ -139,12 +152,14 @@ footer a:hover {
 main{
     text-align: center;
     padding: 100px 40px;
+    font-family: "DM Serif Display";
 }
 main h2 {
     font-size: 2em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 40px 0;
+    font-family: "DM Serif Display";
 }
 main p {
     color: var(--gray-medium);
@@ -152,24 +167,28 @@ main p {
     line-height: 1.6em;
     font-weight: 300;
     margin: 20px 0;
+    font-family: "DM Serif Display";
 }
 main div h2{
     font-size: 2em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 40px 0;
+    font-family: "DM Serif Display";
 }
 #line{
     border-bottom: solid var(--GrayB);
     display:flex;
     margin: 100px 100px 0px 100px;
+    font-family: "DM Serif Display";
 }
 #line2{
     border-bottom: solid var(--GrayB);
     display:flex;
     margin: 10px 10px 0px 10px;
+    font-family: "DM Serif Display";
 }
-#logos{
+.logos{
     margin: 7px;
 }
 .dm-serif-display-regular {
@@ -183,4 +202,40 @@ main div h2{
     font-weight: 400;
     font-style: italic;
   }
-  
+  #family{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  #jumbotron3 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--BlueA);
+    color: white;
+    font-family: "DM Serif Display";
+    width: 90%;
+    height: 100%;
+    padding-bottom: 2em;
+    padding: 90px 0;
+}
+#jumbotron3 h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    font-family: "DM Serif Display";
+}
+#jumbotron3 h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    font-family: "DM Serif Display";
+}
+#jumbotron3 p {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+    font-family: "DM Serif Display";
+}
