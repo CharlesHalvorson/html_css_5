@@ -19,7 +19,7 @@ body {
   font-style: normal;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(to  right, #0DA4F3, #363771);
+  background-image: linear-gradient(to  right, maroon, #363771);
   padding-bottom: 80px;
 }
 
@@ -95,13 +95,12 @@ deepskyblue;
 
 #picture{
   float: left;
-  background-color:#262320 ;
   max-width: 100%; /* Ensures the image doesn't exceed its container's width */
   height: auto;    /* Maintains the aspect ratio by adjusting height proportionally */
   display: block;
   display: flex;
   height: 48px;
-  border: solid;
+  border: solid 4px;
   color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
