@@ -66,18 +66,39 @@
   transform: rotateY(300deg) translateZ(250px);
   background: var(--background);
 }
+.a, .b, .c, .d, .e, .f {
+  border:solid white;
+  border-radius: 5px;
+}
 
 .next, .prev {
-  color: #444;
+  color: white;
   cursor: pointer;
-  background: #CCC;
+  background: #333;
   border-radius: 5px;
-  border-top: 1px solid #FFF;
+  border-top: 1px solid #555;
   box-shadow: 0 5px 0 #999;
   padding: 1em 2em;
   transition: box-shadow 0.1s, transform 0.1s;
   position: relative;
   z-index: 10;
+}
+.next{
+  box-shadow: 
+  0 0 5px rgba(255, 0, 0, 0.674), /* Inner glow */
+  0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
+  0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
+  0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
+  inset 0 0 5px rgba(0, 0, 255, 0.674); /* Inner highlight */
+  
+}
+.prev{
+  box-shadow: 
+    0 0 5px rgba(0, 0, 255, 0.674), /* Inner glow */
+    0 0 15px rgba(0, 0, 255, 0.674), /* Medium glow */
+    0 0 30px rgba(0, 0, 255, 0.674), /* Outer glow */
+    0 0 50px rgba(0, 0, 255, 0.674), /* Widest glow */
+    inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
 }
 
 .next:hover, .prev:hover { color: #000; }
@@ -85,11 +106,13 @@
 .next:active, .prev:active {
   box-shadow: 0 1px 0 #999;
   transform: translateY(4px);
+  
 }
 .carosel_btn{
   background-color: #000;
   border: solid white;
   border-radius: 5px;
+  
 }
 
 .carousel-wrapper-mobile {
@@ -124,7 +147,7 @@
         display: block;
         position: absolute;
         background: #000;
-        width: 200px;
+        width: 170px;
         height: 200px;
         text-align: center;
         color: #FFF;
@@ -156,11 +179,11 @@
         background: var(--background);
     }
     .next-mobile, .prev-mobile {
-        color: #444;
+        color: white;
         cursor: pointer;
-        background: #CCC;
+        background: #333;
         border-radius: 5px;
-        border-top: 1px solid #FFF;
+        border-top: 1px solid #555;
         box-shadow: 0 5px 0 #999;
         padding: 1em 2em;
         transition: box-shadow 0.1s, transform 0.1s;
@@ -168,10 +191,26 @@
         z-index: 10;
     }
     .next-mobile:hover, .prev-mobile:hover {
-        color: #000;
+        color: white;
     }
     .next-mobile:active, .prev-mobile:active {
-        box-shadow: 0 1px 0 #999;
         transform: translateY(4px);
+    }
+    .next-mobile{
+      box-shadow: 
+      0 0 5px rgba(255, 0, 0, 0.674), /* Inner glow */
+      0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
+      0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
+      0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
+      inset 0 0 5px rgba(0, 0, 255, 0.674); /* Inner highlight */
+      
+    }
+    .prev-mobile{
+      box-shadow: 
+        0 0 5px rgba(0, 0, 255, 0.674), /* Inner glow */
+        0 0 15px rgba(0, 0, 255, 0.674), /* Medium glow */
+        0 0 30px rgba(0, 0, 255, 0.674), /* Outer glow */
+        0 0 50px rgba(0, 0, 255, 0.674), /* Widest glow */
+        inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
     }
 }

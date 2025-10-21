@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-style: normal;
   display:flex;
+  font-family: "Baskervville";
 }
 
 #header-logo {
@@ -115,12 +116,13 @@ deepskyblue;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: larger;
+  font-family: "Baskervville";
 }
 p{
   color: white;
 }
 
-footer{
+#const{
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -129,7 +131,15 @@ footer{
     padding: 1em 0;
     z-index: 100;
 }
+footer{
 
+  bottom: 0;
+  width: 100%;
+  background-color: #262320;
+  text-align: center;
+  padding: 1em 0;
+  z-index: 100;
+}
 #footer_text{
     color: white;
 }
@@ -249,6 +259,7 @@ white;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674);
 }
 .company_logos{
   width: 150px;
@@ -269,7 +280,62 @@ table{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674);
 }
 #nav{
   text-decoration: none;
+  
+}
+footer {
+  text-align: center;
+  padding: 100px 40px;
+  font-family: "Baskervville"
+}
+
+footer h3 {
+  margin: 20px 0;
+  text-align: center;
+  font-family: "Baskervville";
+  display: inline-block;
+  background: none;
+  border: 2px solid transparent; /* A transparent border to create space for the shadow */
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 
+    0 0 5px rgba(0, 0, 255, 0.674), /* Inner glow */
+    0 0 15px rgba(0, 0, 255, 0.674), /* Medium glow */
+    0 0 30px rgba(0, 0, 255, 0.674), /* Outer glow */
+    0 0 50px rgba(0, 0, 255, 0.674), /* Widest glow */
+    inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
+  padding: 5px; /* Adjust padding as needed */
+  margin: 0px 0px 20px 0px;
+  background-color: #333; /* Example background for contrast */
+  color: #fff; /* Example text color */
+}
+
+footer a {
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  display: inline-block;
+  font-family: "Baskervville";
+  border: 2px solid transparent; /* A transparent border to create space for the shadow */
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 
+    0 0 5px rgba(255, 0, 0, 0.674), /* Inner glow */
+    0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
+    0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
+    0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
+    inset 0 0 5px rgba(0, 0, 255, 0.674); /* Inner highlight */
+  padding: 5px; /* Adjust padding as needed */
+  margin: 0px 0px 20px 0px;
+  background-color: #333; /* Example background for contrast */
+  color: #fff; /* Example text color */
+  
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+#footerlogo{
+  width: 200px;
 }
