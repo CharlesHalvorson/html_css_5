@@ -101,10 +101,9 @@
     inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
 }
 
-.next:hover, .prev:hover { color: #000; }
+.next:hover, .prev:hover { color: white; }
 
 .next:active, .prev:active {
-  box-shadow: 0 1px 0 #999;
   transform: translateY(4px);
   
 }
