@@ -1,0 +1,32 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Flexbox is the modern way of positioning elements */
+        /*.card {
+            display: flex;
+            gap: 20px;
+        }*/
+        /* Floats are the old-school way of positioning elements */
+        .card img {
+            float: left; /* Makes all sibling elements float right */
+            margin-right: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/themes/light.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/shoelace-autoloader.js"></script>
+</head>
+<body cz-shortcut-listen="true">
+<sl-button variant="success" size="medium" data-optional="" data-valid="">Success</sl-button>
+<sl-rating label="Rating"></sl-rating>
+
+<div class="card">
+        <img src="https://picsum.photos/200/150" alt="">
+        <div class="card-body">
+            <h3>Welcome to Cedar Rapids</h3>
+            <p>The city five seasons</p>
+        </div>
+        <img src="https://picsum.photos/200/149" style="clear: both;" alt="">
+    </div>
+
+</body></html>

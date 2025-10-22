@@ -7,6 +7,7 @@
         <title>Home | Lynch Dallas, P.C. | Cedar Rapids, IA</title>
         <link type="text/css" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+        <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link type="text/css" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -18,13 +19,12 @@
         <link rel="shortcut icon" href="images/gavel-solid-full.svg">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script defer src="scripts/main.js"></script>
-        <script defer src="main.js"></script>
         <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
         <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
-        <script defer src="gsap.js"></script>
-      <body translate="no">
+        <script defer src="scripts/gsap.js"></script>
+        <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
     </head>
-    <body>
+    <body translate="no">
         <header>
             <div id="header-grid">
                 <div id="header-logo">
@@ -42,21 +42,23 @@
                     <li><a href="#"><span class="fa-li"><i class="fa-solid fa-phone"></i></span>319-365-9101</a></li>
                 </ul>
                 </nav>
-                <nav id="header-contact-mobile-nav">
-                    <a href="#" class="btn">Contact Us</a>
-                    <div id="mobile-nav"><i class="fa-solid fa-bars"></i></div>
-                </nav>
-                <nav id="header-bottom-nav" style="display: none">
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Our Firm</a></li>
-                    <li><a href="#">Attorneys</a></li>
-                    <li><a href="#">Practice Areas</a></li>
-                    <li><a href="#">News &amp; Announcements</a></li>
-                </ul>
-                </nav>
             </div>
         </header>
+        <nav id="header-contact-mobile-nav" class="sticky">
+          <a href="#" class="btn">Contact Us</a>
+          <div id="mobile-nav"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+        <nav id="header-bottom-nav" style="display: none">
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Our Firm</a></li>
+            <li><a href="#">Attorneys</a></li>
+            <li><a href="#">Practice Areas</a></li>
+            <li><a href="#">News &amp; Announcements</a></li>
+        </ul>
+        </nav>
+
+
         <div id="jumbotron">
             <div id="jumbotron-image">
                 <img src="https://www.lynchdallas.com/application/files/6915/9122/3492/hero-building.jpg" alt="The front of the Dallas Lynch office building">
@@ -131,20 +133,18 @@
                     </blockquote>
                   </article>
                 </div>
-            </div>
+            </div><!-- Close About Us -->
+
             <div class="parallax">
               <div class="parallax-bg"></div>
               <div class="parallax-text">
                 <h4>Our Attorneys</h4>
                 <h3>Counsel and advice in practically every aspect of law</h3>
-                <p id="text_box">Our lawyers possess the breadth of experience and depth of understanding to provide thoughtful solutions to our clients' most complex legal issues. We frequently collaborate across practice areas to identify innovative solutions to challenges facing our clients, and pride ourselves on having lawyers who are eager to work together to provide the capabilities our clients need.</p>
+                <p>Our lawyers possess the breadth of experience and depth of understanding to provide thoughtful solutions to our clients' most complex legal issues. We frequently collaborate across practice areas to identify innovative solutions to challenges facing our clients, and pride ourselves on having lawyers who are eager to work together to provide the capabilities our clients need.</p>
                 <a href="#" class="btn">Meet Our Attorneys</a>
               </div>
             </div>
-            
-            <footer>
-            
-            </footer>
+
         </main>
         <footer>
           <div id="footer-cta">
@@ -159,15 +159,13 @@
             <div class="col">
               <h3>Lynch Dallas Legal</h3>
               <h4>Main Office</h4>
-              <p><a href="https://maps.app.goo.gl/GgxGXb1An3jWwYsw8" target="_blank">
-                316 Second St SE Suite 124<br>Cedar Rapids, Iowa 52401</a></p>
-          
+              <p><a href="https://maps.app.goo.gl/nNXhh8YU7bW9ex6ZA" target="_blank">316 Second St SE Suite 124<br>
+              Cedar Rapids, Iowa 52401</a></p>
+
               <h4>Satellite Office</h4>
-              <p><a href="https://maps.app.goo.gl/ZtYZXhyhDft1Jyet6" target="_blank">
-                709 John Drive<br>Monticello, Iowa 52310</a></p>
+              <p><a href="https://maps.app.goo.gl/SyQFhkqHRVcAHZ4z8" target="_blank">709 John Drive<br>
+              Monticello, Iowa 52310</a></p>
             </div>
-            
-          
             <div class="col">
               <h3>Contact Us</h3>
               <table>
@@ -185,28 +183,34 @@
                 </tr>
               </table>
             </div>
-            
             <div class="col">
               <h3>Connect With Us</h3>
               <p>Follow us and connect via social media for updates and more.</p>
               <div class="social-icons">
-                <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/lynchdallaslaw" target="_blank">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/lynchdallas/" target="_blank">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
               </div>
             </div>
-            
             <div class="col">
               <h3>About Us</h3>
-              <p>Lynch Dallas Legal offers clients a wealth of experience and partners with you to address your most urgent priorities. We represent clients across the state of Iowa.</p>
+              <p>Lynch Dallas Legal offers clients a wealth of experience 
+                and partners with you to address your most urgent priorities. 
+                We represent clients across the state of Iowa.</p>
             </div>
           </div>
           <div id="footer-copyright">
-            <p>Copyright &copy; 2025 Lynch Dallas, P.C. Attorneys At Law. 
-              All Rights Reserved. Web Application by 
-              <a href="http://www.informaticsinc.com/" target="_blank">Informatics, Inc</a> | 
-              <a href="#">Privacy Policy</a></p>
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Lynch Dallas, 
+              P.C. Attorneys At Law. All Rights Reserved.
+               Web Application by <a href="https://www.informaticsinc.com/" target="_blank">Informatics, Inc</a> | 
+               <a href="#">Privacy Policy</a></p>
           </div>
         </footer>
+        <a href="#" id="to-top-link"><i class="fa-solid fa-chevron-up"></i></a>
+
     </body>
 
 </html>

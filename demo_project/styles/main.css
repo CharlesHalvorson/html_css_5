@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
   border-top: 0.5em solid var(--navy);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  /* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
 }
 
 #header-logo {
@@ -68,6 +68,12 @@ header nav a {
   align-items: center; /* Vertically centers the contact button with the mobile navigation */
 }
 
+.sticky {
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+}
+
 /* Class selectors start with a period */
 .btn {
   background-color: var(--blue);
@@ -89,6 +95,13 @@ header nav a {
   cursor: pointer;
 }
 
+#header-bottom-nav {
+position: absolute;
+left: 0;
+width: 100%;
+background-color: white;
+}
+
 
 #header-bottom-nav li {
   border-bottom: 1px solid lightgrey;
@@ -103,7 +116,6 @@ header nav a {
 #header-bottom-nav .active, #header-bottom-nav a:hover {
   color: var(--blue);
 }
-
 
 #jumbotron-text {
   background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
@@ -191,6 +203,9 @@ header nav a {
   line-height: 1.25em;
   color: #555;
 }
+
+
+
 .parallax {
   position: relative;
   height: 100vh;
@@ -243,47 +258,25 @@ white;
 }
 
 
-footer {
-  min-height: 50vh;
-}
-#footer-copyright {
-  background-color: 
-#222;
-  color: 
-#999;
-  padding: 24px;
-  text-align: center;
-  font-size: 13px;
-}
-
-#footer-copyright a {
-  color: 
-#999;
-  text-decoration: none;
-}
-
-#footer-copyright a:hover {
-  text-decoration: underline;
-}
 #footer-contact {
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 #footer-contact .col {
-  padding: 10px 20px;
+  margin: 20px;
 }
 
 #footer-contact h3 {
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 #footer-contact h4 {
   font-size: 16px;
   font-family: 'PT Sans', sans-serif;
-  font-weight: bold;
-  margin: 20px 0;
   text-transform: uppercase;
+  margin: 10px 0;
 }
 
 #footer-contact p {
@@ -292,13 +285,8 @@ footer {
 }
 
 #footer-contact a {
-  color: 
-#222;
+  color: #222;
   text-decoration: none;
-}
-
-#footer-contact a:hover {
-  text-decoration: underline;
 }
 
 #footer-contact table {
@@ -309,36 +297,60 @@ footer {
   font-weight: bold;
 }
 
-#footer-contact table th, #footer-contact table td {
+#footer-contact table th, 
+#footer-contact table td {
   text-align: left;
   padding: 8px;
   padding-left: 0;
 }
 
+
+#footer-contact a:hover {
+  text-decoration: underline;
+}
+
 #footer-contact .social-icons a {
   display: inline-block;
   width: 45px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  font-size: 22px;
+  height:45px;
+  line-height:45px;
+  border-radius: 50px;
   background-color: var(--blue);
-  color: 
-#fff;
   text-align: center;
-  margin: 0 10px 10px 0;
-  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  margin-right: 10px;
 }
 
 #footer-contact .social-icons a:hover {
-  background: var(--navy);
-  transform: scale(1.2, 1.2);
+  background-color: var(--navy);
+  transform: scale(1.2);
+} 
+
+
+
+#footer-copyright {
+  background-color: #222;
+  color: #999;
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
 }
-#footer-cta {
-  background: 
-#333;
-  color: 
-#fff;
+
+#footer-copyright a {
+  color: #999;
+  text-decoration: none;
+}
+
+#footer-copyright a:hover {
+  text-decoration: underline;
+ }
+
+
+ #footer-cta {
+  background: #333;
+  color: #fff;
   text-align: center;
   padding: 25px;
   position:relative;
@@ -353,7 +365,7 @@ footer {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: .6;
+  opacity: .9;
   mix-blend-mode: overlay;
 }
 
@@ -371,8 +383,7 @@ footer {
 }
 
 #footer-cta a {
-  color: 
-white;
+  color: white;
   text-decoration: none;
   font-size: 24px;
   display: block;
@@ -388,11 +399,56 @@ white;
 }
 
 #footer-cta a span {
-  color: 
-deepskyblue;
+  color: var(--blue);
 }
 
 #footer-cta .btn {
   font-size: 16px;
   display: inline-block;
+  text-decoration: none;
+}
+
+/* I got half of this code from Google Gemini */
+#to-top-link {
+  padding: 20px;
+  background-color: dodgerblue;
+  -webkit-box-shadow: 2px 5px 7px 0px #000000; 
+  box-shadow: 2px 5px 7px 0px #000000;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  
+  /* Add this to hide the link by default */
+  display: none;
+  
+  /* Added for better icon centering */
+  width: 60px;  /* Fixed width */
+  height: 60px; /* Fixed height */
+  box-sizing: border-box; /* Include padding in width/height */
+  display: none; /* Hide by default */
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+#to-top-link i {
+color: white;
+}
+
+/* This style will be applied by JavaScript */
+#to-top-link.show {
+display: flex; /* Use flex to center the icon */
+}
+
+/* This style will be applied by JavaScript */
+#to-top-link.show {
+display: flex; /* Use flex to center the icon */
+}
+
+/* This style will be applied by JavaScript */
+#to-top-link.show {
+display: flex; /* Use flex to center the icon */
 }
