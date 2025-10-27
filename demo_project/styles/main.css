@@ -72,6 +72,7 @@ header nav a {
 position: -webkit-sticky;
 position: sticky;
 top: 0;
+z-index: 2;
 }
 
 /* Class selectors start with a period */
@@ -99,12 +100,13 @@ top: 0;
 position: absolute;
 left: 0;
 width: 100%;
-background-color: white;
+
 }
 
 
 #header-bottom-nav li {
   border-bottom: 1px solid lightgrey;
+  background-color: white;
 }
 
 #header-bottom-nav a {
@@ -116,7 +118,9 @@ background-color: white;
 #header-bottom-nav .active, #header-bottom-nav a:hover {
   color: var(--blue);
 }
-
+#jumbotron {
+  scroll-margin: top;
+}
 #jumbotron-text {
   background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
   padding: 1.5em;

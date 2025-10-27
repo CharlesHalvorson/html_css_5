@@ -303,11 +303,9 @@ footer h3 {
   border: 2px solid transparent; /* A transparent border to create space for the shadow */
   border-radius: 10px; /* Optional: for rounded corners */
   box-shadow: 
-    0 0 5px rgba(0, 0, 255, 0.674), /* Inner glow */
-    0 0 15px rgba(0, 0, 255, 0.674), /* Medium glow */
-    0 0 30px rgba(0, 0, 255, 0.674), /* Outer glow */
-    0 0 50px rgba(0, 0, 255, 0.674), /* Widest glow */
-    inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
+    0 0 5px rgb(255, 0, 0), /* Inner glow */
+    0 0 15px rgba(255, 0, 0), /* Medium glow */
+    inset 0 0 5px rgba(255, 0, 0); /* Inner highlight */
   padding: 5px; /* Adjust padding as needed */
   margin: 0px 0px 20px 0px;
   background-color: #333; /* Example background for contrast */
@@ -323,11 +321,11 @@ footer a {
   border: 2px solid transparent; /* A transparent border to create space for the shadow */
   border-radius: 10px; /* Optional: for rounded corners */
   box-shadow: 
-    0 0 5px rgba(255, 0, 0, 0.674), /* Inner glow */
-    0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
-    0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
-    0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
-    inset 0 0 5px rgba(0, 0, 255, 0.674); /* Inner highlight */
+    0 0 5px rgba(187, 0, 0, 0.666), /* Inner glow */
+    0 0 15px rgba(187, 0, 0, 0.666), /* Medium glow */
+    /* 0 0 30px rgba(187, 0, 0, 0.666),
+    0 0 50px rgba(255, 0, 0, 0.674),  */
+    inset 0 0 5px rgb(187, 0, 0, 0.666);
   padding: 5px; /* Adjust padding as needed */
   margin: 0px 0px 20px 0px;
   background-color: #333; /* Example background for contrast */
