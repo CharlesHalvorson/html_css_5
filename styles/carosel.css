@@ -196,15 +196,15 @@
       0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
       0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
       0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
-      inset 0 0 5px rgba(0, 0, 255, 0.674); /* Inner highlight */
+      inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
       
     }
     .prev-mobile{
       box-shadow: 
-        0 0 5px rgba(0, 0, 255, 0.674), /* Inner glow */
-        0 0 15px rgba(0, 0, 255, 0.674), /* Medium glow */
-        0 0 30px rgba(0, 0, 255, 0.674), /* Outer glow */
-        0 0 50px rgba(0, 0, 255, 0.674), /* Widest glow */
+        0 0 5px rgba(255, 0, 0, 0.674), /* Inner glow */
+        0 0 15px rgba(255, 0, 0, 0.674), /* Medium glow */
+        0 0 30px rgba(255, 0, 0, 0.674), /* Outer glow */
+        0 0 50px rgba(255, 0, 0, 0.674), /* Widest glow */
         inset 0 0 5px rgba(255, 0, 0, 0.674); /* Inner highlight */
     }
 }

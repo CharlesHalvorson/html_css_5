@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techsolve Solutions</title>
     <link rel="stylesheet" href="styles/reste.css">
+    <script data-fa-kit-code="38c11e3f20" type="module" src="https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@3.0.0/dist-cdn/webawesome.loader.js"></script>
     <link rel="stylesheet" href="styles/carosel.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -14,6 +15,8 @@
     <script src="scripts/scrollup.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script data-fa-kit-code="38c11e3f20" type="module" src="https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@3.0.0/dist-cdn/webawesome.loader.js"></script>
+    <script data-fa-kit-code="38c11e3f20" type="module" src="https://cdn.jsdelivr.net/npm/@awesome.me/webawesome@3.0.0/dist-cdn/webawesome.loader.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body class="paginacontainer">
@@ -46,7 +49,7 @@
     <main>
         
         <div class="hero">
-            <h1>Welcome to TechSolve Solutions</h1>
+            <wa-animation name="bounce" duration="2000" play><h1>Welcome to TechSolve Solutions</h1></wa-animation>
             <p>Learn about our products and services.</p>
             <a href="index_subpages/online_booking/booking.html" class="btn-primary">View Booking Options</a>
         </div>
@@ -99,9 +102,15 @@
             </table>
         </div>
     </main>
+    
+
     <footer>
         <img id="footerlogo" src="images_main/techsolve_solutions_logo_no_name.png" alt="Techsolve Logo">
-      <p class="line2"></p>
+        <wa-rating label="Rating"></wa-rating>
+        <p>last update since page opening</p>
+        <wa-relative-time date="2025-11-06T22:47:00.000Z"></wa-relative-time>
+
+        <p class="line2"></p>
       <h3>Our company</h3>
       <ul>
         <li><a href="#">How we work</a></li>
@@ -128,6 +137,21 @@
         <li><a href="#">News</a></li>
         <li><a href="#">Licenses</a></li>
       </ul>
+      <div>
+        <wa-dropdown>
+            <wa-button slot="trigger" with-caret>Direct Page Links</wa-button>
+          
+            <wa-dropdown-item>
+              <a href="index_subpages/about_us/about_us.html">About Us</a>
+            </wa-dropdown-item>
+            <wa-dropdown-item>
+                <a href="index_subpages/newsletter/newsletter.html">Newsletter</a>
+              </wa-dropdown-item>
+              <wa-dropdown-item>
+                <a href="index_subpages/online_booking/booking.html">Online Booking</a>
+              </wa-dropdown-item>
+        </wa-dropdown>
+    </div>
     </footer>
     <footer>
         <p><u>TechSolve Solutions ©2025</u></p>
@@ -135,3 +159,10 @@
     
 </body>
 </html>
+<div class="animation-overview">
+    <wa-animation name="bounce" duration="2000" play><div class="box"></div></wa-animation>
+    <wa-animation name="jello" duration="2000" play><div class="box"></div></wa-animation>
+    <wa-animation name="heartBeat" duration="2000" play><div class="box"></div></wa-animation>
+    <wa-animation name="flip" duration="2000" play><div class="box"></div></wa-animation>
+  </div>
+  

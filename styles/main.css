@@ -1,7 +1,13 @@
 :root {
   --background:rgba(0, 0, 0, 0.623);
 }
-
+/* CSS Utilities */
+@import url('utilities.css');
+/* Theme */
+@import url('themes/default.css');
+/* Native Styles */
+@import url('native.css');
+@layer wa-native, wa-utilities, wa-color-palette, wa-color-variant, wa-theme, wa-theme-dimension, wa-theme-overrides;
 #foo {
   color: var(--background);
 }
@@ -336,6 +342,8 @@ footer a:hover {
 }
 #footerlogo{
   width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 header{
   position: fixed;
@@ -440,4 +448,16 @@ stroke-width: 4;
 box-sizing:border-box;
 -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
+}
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.animation-overview .box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: var(--wa-color-brand-fill-loud);
+  margin: 1.5rem;
 }
