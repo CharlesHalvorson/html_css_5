@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+#header-logo path {
+fill: black;
+}
+@media (prefers-color-scheme: dark) {
+#header-logo path { fill: white; }
+}
+
 /**
 * Smooth scrolling on the whole document
 */
@@ -156,6 +163,23 @@ width: 100%;
 scroll-margin-top: 3em;
 }
 
+@media only screen and (min-width: 956px) {
+#jumbotron {
+  display: flex;
+  flex-wrap: wrap;
+}
+#jumbotron-image, #jumbotron-text {
+  width: 50%;
+}
+#jumbotron-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* default value is stretch */
+  justify-content: center; /* When working with flex-direction: column, justify-content refers to the verical alignment */
+  gap: 10px;
+}
+}
+
 #jumbotron-text {
   background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
   padding: 1.5em;
@@ -222,6 +246,23 @@ scroll-margin-top: 3em;
 
 #about-cards {
 scroll-margin-top: 4em;
+}
+
+@media only screen and (min-width: 680px) {
+#about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around ; /* flex-start, flex-end, space-between */
+}
+.card {
+  width: 40%;
+}
+}
+
+@media only screen and (min-width: 960px) {
+.card {
+  width: 28%;
+}
 }
 
 #about-cards article {
@@ -315,8 +356,27 @@ white;
   padding: 40px 20px;
 }
 
+@media only screen and (min-width: 680px) {
+  #footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 #footer-contact .col {
   margin: 20px;
+}
+
+@media only screen and (min-width: 680px) {
+  #footer-contact .col {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  #footer-contact .col {
+    width: 22%;
+  }
 }
 
 #footer-contact h3 {
@@ -421,6 +481,8 @@ white;
   padding: 25px;
   position:relative;
   z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 #footer-cta img {
@@ -517,4 +579,10 @@ display: flex; /* Use flex to center the icon */
 /* This style will be applied by JavaScript */
 #to-top-link.show {
 display: flex; /* Use flex to center the icon */
+}}}*/
 }
+
+/* This style will be applied by JavaScript */
+#to-top-link.show {
+display: flex; /* Use flex to center the icon */
+}}

@@ -43,4 +43,5 @@ $(document).ready(() => {
             behavior: 'smooth'
         });
     }
+
 });
