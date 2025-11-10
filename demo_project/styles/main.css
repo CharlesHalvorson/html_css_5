@@ -313,7 +313,7 @@ scroll-margin-top: 3em;
   left: 0;
   width: 100%;
   height: 40%;
-  z-index: -1;
+  z-index: 0;
   background-image: url('https://www.lynchdallas.com/application/files/7515/9231/1199/feature-full.jpg');
   background-size: cover;
   background-position: center;
