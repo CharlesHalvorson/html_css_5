@@ -52,7 +52,7 @@ $(document).ready(() => {
         } else {
             console.log("Light mode");
         }
-    }
+    }// This code changes the favicon based on light- and dark-mode settings
 
     // Initial check
     updateFavicon(darkModeMediaQuery);
