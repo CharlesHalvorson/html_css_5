@@ -43,5 +43,20 @@ $(document).ready(() => {
             behavior: 'smooth'
         });
     }
+    // This code changes the favicon based on light- and dark-mode settings
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
+    function updateFavicon(e) {
+        if (e.matches) {
+            console.log("Dark mode");
+        } else {
+            console.log("Light mode");
+        }
+    }
+
+    // Initial check
+    updateFavicon(darkModeMediaQuery);
+
+    // Listen for changes in color scheme preference
+    darkModeMediaQuery.addEventListener('change', updateFavicon);
 });
