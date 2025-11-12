@@ -44,7 +44,16 @@ h1, h2, h3, h4, h5, h6 {
     color:white;
 }
 }
+s{
+  font-style: normal;
+  display:flex;
+  font-family: "Baskervville";
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
 
+}
 #header-logo {
   text-align: center;
   padding: 15px 0;
@@ -53,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header-contact-mobile-nav {
   /* grid-area: header-contact-mobile-nav; */
-  background-color: rgb(250, 91, 91);
+  background-color: rgb(133, 0, 0);
 @media screen and (prefers-color-scheme: dark){
   background-color: var(--background);
 }
@@ -79,7 +88,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #header-bottom-nav {
   grid-area: header-bottom-nav;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+
+}
 }
 
 #header-bottom-nav ul {
@@ -99,7 +114,7 @@ lightgrey;
 
 #header-bottom-nav ul li a {
 /*   background-color: yellow; */
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
 
   font-size: 1.2em;
@@ -107,6 +122,9 @@ lightgrey;
 
   /* padding: 20px; */
   width: 100%;
+@media screen and (prefers-color-scheme: dark){
+    color:rgb(255, 255, 255);
+}
 }
 
 #header-bottom-nav ul li a:hover,
@@ -123,7 +141,7 @@ deepskyblue;
   display: flex;
   height: 48px;
   border: solid 3px black;
-  background-color: rgb(250, 91, 91);
+  background-color: rgb(133, 0, 0);
 @media screen and (prefers-color-scheme: dark){
   background-color: var(--background);
   border-color: white;
@@ -141,6 +159,11 @@ deepskyblue;
   border-bottom-right-radius: 5px;
   font-size: larger;
   font-family: "Baskervville";
+  color: white;
+  border-color: black;
+@media screen and (prefers-color-scheme: dark){
+  border-color: white;
+}
 }
 p{
   color: black;
