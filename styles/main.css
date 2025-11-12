@@ -1,5 +1,12 @@
 :root {
-  --background:rgba(0, 0, 0, 0.623);
+  --background:rgb(255, 255, 255);
+
+}
+@media screen and (prefers-color-scheme: dark){
+  :root {
+    --background:rgb(0, 0, 0);
+  
+  }
 }
 /* CSS Utilities */
 @import url('utilities.css');
@@ -8,9 +15,7 @@
 /* Native Styles */
 @import url('native.css');
 @layer wa-native, wa-utilities, wa-color-palette, wa-color-variant, wa-theme, wa-theme-dimension, wa-theme-overrides;
-#foo {
-  color: var(--background);
-}
+
 
 * {
   max-width: 100%;
@@ -34,27 +39,37 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   display:flex;
   font-family: "Baskervville";
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
 }
 
 #header-logo {
   text-align: center;
   padding: 15px 0;
-  background-color: black;
+  background-color: var(--background);
 }
 
 #header-contact-mobile-nav {
   /* grid-area: header-contact-mobile-nav; */
-  background-color:#262320;
+  background-color: rgb(250, 91, 91);
+@media screen and (prefers-color-scheme: dark){
+  background-color: var(--background);
+}
   display:flex;
   justify-content: space-between;
   align-items: center;
 }
 
 #mobile-nav {
-  color: white;
+  color: black;
   padding: 01.5em;
   cursor: pointer;
   /* display:flex; */
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
 }
 .fa-solid{
   position: absolute;
@@ -107,13 +122,16 @@ deepskyblue;
   display: block;
   display: flex;
   height: 48px;
-  border: solid 4px;
-  color: white;
+  border: solid 3px black;
+  background-color: rgb(250, 91, 91);
+@media screen and (prefers-color-scheme: dark){
+  background-color: var(--background);
+  border-color: white;
+}
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 #title{
-  color: white;
   position: absolute;
   /* display: flex; */
   left: 50px;
@@ -125,9 +143,26 @@ deepskyblue;
   font-family: "Baskervville";
 }
 p{
-  color: white;
+  color: black;
+  background-color: white;
+  border: solid black 2px;
+  border-radius: 5px;  
+  margin: 1em 0; /* Add space above and below paragraph */
+  line-height: 1.25em;
+@media screen and (prefers-color-scheme: dark){
+    color:white;
 }
-
+}
+#days{
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+@media screen and (prefers-color-scheme: dark){
+  background-color: var(--background);
+}
+}
+.block{
+  display: block;
+}
 #const{
     position: fixed;
     bottom: 0;
@@ -139,12 +174,18 @@ p{
 }
 footer{
   width: 100%;
-  background-color: #262320;
   text-align: center;
   padding: 1em 0;
+  background-color: #830000;
+@media screen and (prefers-color-scheme: dark){
+  background-color: #262320;
+}
 }
 #footer_text{
-    color: white;
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+  color: white;
+}
 }
 #sorry{
   color: white;
@@ -166,12 +207,9 @@ footer{
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674);
 }
-p {
-  color: 
-white;
-  margin: 1em 0; /* Add space above and below paragraph */
-  line-height: 1.25em;
-  
+.copyright{
+  background: none;
+  border: none;
 }
 .hero {
   background-image: url(/images_main/3d-render-laptop-notebook-electronic-device-with-illuminated-with-neon-light_204298-982.jpg);
@@ -227,6 +265,10 @@ white;
   display: block;
   margin: 0 auto;
   box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.674);
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
 }
 
 .btn-primary {
@@ -238,11 +280,19 @@ white;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   /* box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674); */
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color:white;
+}
 }
 
 .btn-primary:hover {
   background-color: #333;
   color: #fff;
+@media screen and (prefers-color-scheme: dark){
+    color: black;
+    background-color: #fff;
+}
 }
 #video{
   border: solid;
@@ -292,12 +342,6 @@ table{
   padding: 1em;
   
 }
-footer {
-  text-align: center;
-  padding: 100px 40px;
-  font-family: "Baskervville"
-}
-
 footer h3 {
   margin: 20px 0;
   text-align: center;
@@ -312,8 +356,12 @@ footer h3 {
     inset 0 0 5px rgba(255, 0, 0); /* Inner highlight */
   padding: 5px; /* Adjust padding as needed */
   margin: 0px 0px 20px 0px;
-  background-color: #333; /* Example background for contrast */
-  color: #fff; /* Example text color */
+  background-color: white; /* Example background for contrast */
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color: white;
+    background-color: #333; /* Example background for contrast */
+  }
 }
 
 footer a {
@@ -332,9 +380,12 @@ footer a {
     inset 0 0 5px rgb(187, 0, 0, 0.666);
   padding: 5px; /* Adjust padding as needed */
   margin: 0px 0px 20px 0px;
-  background-color: #333; /* Example background for contrast */
-  color: #fff; /* Example text color */
-  
+  background-color: rgba(255, 255, 255, 0.655); /* Example background for contrast */
+  color: black;
+@media screen and (prefers-color-scheme: dark){
+    color: white;
+    background-color: #333; /* Example background for contrast */
+  }
 }
 
 footer a:hover {
