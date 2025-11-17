@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
         .container {
-            height: 1000px;
-            width: 80%;
+            height: 50vh;
+            width: 60%;
             margin: 0 auto;
             background-color: black;
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-direction: column;
+            align-items: flex-start; /*stretch, center, flex-start, flex-end, baseline*/
+            justify-content: left; /* left, flex-start, right, flex-end, center, space-between, space-around, space-evenly */
+            flex-direction: row; /* row, row-reverse, column, column-reverse */
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .box {
             width: 200px;
@@ -29,24 +38,78 @@
             background-color: red;
             color: white;
             line-height: 150px;
+            align-self: end; /*stretch, center, start, end*/
+            order: 2;
         }
         .box2 {
             background-color: yellow;
             color: black;
             line-height: 200px;
+            order:3;
         }
         .box3 {
             background-color: blue;
             color: white;
             line-height: 100px;
+            flex-grow: 3;
+            order: 1
+        }
+        .user-social {
+            margin: 20px auto;
+            width: 350px; /* Change this */
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .user-profile {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* horizontal alignment when using rows */
+            align-items: center;
+            gap: 20px;
+        }
+        .user-image img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertical alignment when using columns */
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .user-info h4 {
+            font-size: 2em;
+        }
+        .user-info a {
+            color: #555;
+            text-decoration: none;
+        }
+        .user-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <div class="user-social">
+        <div class="user-profile">
+            <div class="user-image">
+                <!-- Source: https://randomuser.me/-->
+                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Random User Image">
+            </div>
+            <div class="user-info">
+                <h4>Jane Doe</h4>
+                <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
+            </div>
+        </div>
+    </div>
+
   <div class="container">
     <div class="box box1">Box 1</div>
     <div class="box box2">Box 2</div>
     <div class="box box3">Box 3</div>
   </div>
 </body>
-</html>
+</html>>>

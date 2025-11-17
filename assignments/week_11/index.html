@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .pic{
+            display: flex;
+            justify-content: center;
+        }
+        picture{
+            display: flex;
+            justify-content: center;
+        }
+        #empty{
+            height: 100%;
+            width: 100%;
+            box-sizing: content-box;
+        }
+        body{
+            display: flex;
+            height: auto;
+            margin: 50px;
+            border: solid black 5px;
+            justify-content: center;
+            @media screen and (max-width: 375px){
+                justify-content: center;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="pic">
+        <picture>
+            <source srcset="dresser.jpg" media="(max-width: 375px)">
+            <img src="dresser-cropped.jpg" alt="dresser" 
+        </picture>
+    </div>
+    <div id="empty"><p></p></div>
+</body>
+</html>

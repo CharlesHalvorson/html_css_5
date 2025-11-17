@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css">
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --light-gray: rgb(220, 220, 220);
+            --dark-gray: rgb(50, 50, 50);
+        }
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+        .user-social {
+            margin: 200px auto; /* Change the top-bottom margin to 0 */
+            width: 700px; /* Change this to 100% */
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .user-profile {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* horizontal alignment when using rows */
+            align-items: center;
+            gap: 20px;
+        }
+        .user-image img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertical alignment when using columns */
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .user-info h4 {
+            font-size: 2em;
+        }
+        .user-info a {
+            color: #555;
+            text-decoration: none;
+        }
+        .user-info a:hover {
+            text-decoration: underline;
+        }
+        .share-icon {
+            display: flex;
+            gap: 10px;
+        }
+        .share-icon i {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            border-radius: 50%;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .share-icon i:hover {
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            cursor: pointer;
+        }
+        .share-icon a {
+            text-decoration: none;
+        }
+        .share-popover {
+            display: flex; 
+            flex-direction: row; 
+            gap: 1rem;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="user-social">
+        <div class="user-profile">
+            <div class="user-image">
+                <!-- Source: https://randomuser.me/-->
+                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Random User Image">
+            </div>
+            <div class="user-info">
+                <h4>Jane Doe</h4>
+                <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
+            </div>
+        </div>
+        <div class="share-icon">
+            
+            <wa-popover for="share-btn">
+                <div class="share-popover">
+                    <p>SHARE</p>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
+                    <a href="https://bsky.app" target="_blank"><i class="fa-brands fa-bluesky fa-xl"></i></a>
+                </div>
+            </wa-popover>
+            <i class="fa-solid fa-share fa-xl" id="share-btn"></i>
+        </div>
+    </div>
+</body>
+</html>
