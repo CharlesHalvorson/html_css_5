@@ -3,46 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css">
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
+    <title>Week_11</title>
     <style>
         * {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: auto;
+            max-height: auto;
+            
+        }
+        html{
+            background-color: lightgray;
         }
         
         .pic{
             display: flex;
-            justify-content: center;
+            justify-content: center;       
         }
         picture{
             display: flex;
             justify-content: center;
         }
-        #empty{
-            height: 100%;
-            width: 100%;
-            box-sizing: content-box;
-        }
-        body{
+        #mass{
             display: flex;
-            height: auto;
+            /* height: auto; */
             margin: 50px;
-            border: solid black 5px;
-            justify-content: center;
+            border: solid none;
+            border-radius: 2em;
+            background-color: white;
+            justify-content: flex-end;
+            padding-top: 0;
+            padding-bottom: 0;
+            align-items: center;
+            flex-direction: row;
+            box-shadow: 0px 8px 10px -5px rgb(95, 95, 95);
+            font-family: "Montserrat", sans-serif;
+
             @media screen and (max-width: 375px){
                 justify-content: center;
                 flex-direction: column;
             }
+            
+        }
+        :root {
+            --light-gray: rgb(220, 220, 220);
+            --dark-gray: rgb(131, 113, 113);
+        }
+        .user-social {
+            margin-top: 0 ; /* Change the top-bottom margin to 0 */
+            margin-bottom: 0;
+            margin-left: 4em;
+            width: 100%; /* Change this to 100% */
+            
+            border-radius: 20px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            justify-self: left;
+        }
+        .user-profile {
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* horizontal alignment when using rows */
+            align-items: center;
+            gap: 20px;
+        }
+        .user-image img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertical alignment when using columns */
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .user-info h4 {
+            font-size: 2em;
+        }
+        .user-info a {
+            color: #555;
+            text-decoration: none;
+        }
+        .user-info a:hover {
+            text-decoration: underline;
+        }
+        .share-icon {
+            display: flex;
+            gap: 10px;
+        }
+        .share-icon i {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            border-radius: 50%;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            margin-right: 5em;
+            align-items: center;
+            justify-content: center;
+        }
+        .share-icon i:hover {
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            cursor: pointer;
+        }
+        .share-icon a {
+            text-decoration: none;
+        }
+        .share-popover {
+            display: flex; 
+            flex-direction: row; 
+            gap: 1rem;
+            align-items: center;
+        }
+        #rightside{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 4em;
+        }
+        .dresser{
+            border-end-end-radius: 0!important;
+            border-start-end-radius: 0;
+            border-start-start-radius: 2em;
+            border-end-start-radius:2em;
+        }
+        #sub{
+            margin-left: 4em;
         }
     </style>
 </head>
 <body>
-    <div id="pic">
-        <picture>
-            <source srcset="dresser.jpg" media="(max-width: 375px)">
-            <img src="dresser-cropped.jpg" alt="dresser" 
-        </picture>
+    <div id="mass">
+        <div id="pic">
+            <picture >
+                <source  srcset="dresser.jpg" media="(max-width: 375px)">
+                <img class="dresser" src="dresser-cropped.jpg" alt="dresser" 
+            </picture>
+        </div>
+        <div id="rightside">
+            <div class="title">
+                <h1 >Shift the overall look and feel by adding these wondeful touchees to furniture in your home</h1>
+            </div>
+            <div id="sub">
+                <h4>Ever been in a room and felt like somthing was missing? Perhaps it felt slightly bare and univiting. I've got some simple tips to help you make any room feel complete</h4>
+            </div>
+
+            <div class="user-social">
+                <div class="user-profile">
+                    <div class="user-image">
+                        <!-- Source: https://randomuser.me/-->
+                        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Random User Image">
+                    </div>
+                    <div class="user-info">
+                        <h4>Jane Doe</h4>
+                        <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
+                    </div>
+                </div>
+            <div class="share-icon">
+                
+                <wa-popover for="share-btn">
+                    <div class="share-popover">
+                        <p>SHARE</p>
+                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
+                        <a href="https://bsky.app" target="_blank"><i class="fa-brands fa-bluesky fa-xl"></i></a>
+                    </div>
+                </wa-popover>
+                <i class="fa-solid fa-share fa-xl" id="share-btn"></i>
+            </div>
+        </div>
     </div>
-    <div id="empty"><p></p></div>
 </body>
 </html>
