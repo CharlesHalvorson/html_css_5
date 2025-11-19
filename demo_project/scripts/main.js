@@ -1,9 +1,10 @@
 $(document).ready(() => {
-    // This code handles the hamburger menu
+    
+    $("#header-placeholder").load("header.html", function() {
+        // This code handles the hamburger menu
     const mobileNav = $('#mobile-nav');
     const headerBottomNav = $('#header-bottom-nav');
     mobileNav.click(() => {
-        console.log('clicked');
         headerBottomNav.toggle()
     });
 
@@ -11,9 +12,10 @@ $(document).ready(() => {
     headerBottomNav.find('a').click(() => {
         headerBottomNav.hide();
     });
-
-
-    // This code handles showing and hiding the go-to-top button.
+    });
+    $("#footer-placeholder").load("footer.html", function() {
+            $("#copyrigh-year").text(new Date().getFullYear());
+            // This code handles showing and hiding the go-to-top button.
     // Source Google Gemini
     // Get the link element
     var toTopLink = document.getElementById("to-top-link");
@@ -43,6 +45,11 @@ $(document).ready(() => {
             behavior: 'smooth'
         });
     }
+    });
+    
+
+
+    
     // This code changes the favicon based on light- and dark-mode settings
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -59,4 +66,5 @@ $(document).ready(() => {
 
     // Listen for changes in color scheme preference
     darkModeMediaQuery.addEventListener('change', updateFavicon);
+
 });
