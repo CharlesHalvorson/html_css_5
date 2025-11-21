@@ -1,0 +1,165 @@
+html{
+    background-color: lightgray;
+}
+
+#mass{
+    display: flex;
+    /* height: auto; */
+    margin: 50px;
+    border: solid none;
+    border-radius: 2em;
+    background-color: white;
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: 0;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0px 8px 10px -5px rgb(95, 95, 95);
+    font-family: "Montserrat", sans-serif;
+    height: 512px;
+    @media screen and (max-width: 375px){
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    
+}
+:root {
+    --light-gray: rgb(220, 220, 220);
+    --dark-gray: rgb(131, 113, 113);
+}
+.user-social {
+    margin: 0; /* Change the top-bottom margin to 0 */
+    width: 100%; /* Change this to 100% */
+    
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* horizontal alignment when using rows */
+    align-items: center;
+    /* gap: 20px; */
+
+}
+.user-image img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    @media screen and (max-width: 375px){
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+    }
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical alignment when using columns */
+    align-items: flex-start;
+    margin-bottom: 0px;
+    
+}
+.user-info h4 {
+    font-size: 2em;
+    @media screen and (max-width: 375px){
+        font-size: smaller;
+        margin-bottom: 0px;
+    }
+}
+.user-info a {
+    color: #555;
+    text-decoration: none;
+    @media screen and (max-width: 375px){
+        font-size: smaller;
+    }
+    
+}
+.user-info a:hover {
+    text-decoration: underline;
+}
+.share-icon {
+    display: flex;
+    gap: 10px;
+}
+.share-icon i {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border-radius: 50%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    /* margin-right: 5em; */
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 375px){
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        font-size: smaller;
+    }
+}
+.share-icon i:hover {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+    cursor: pointer;
+}
+.share-icon a {
+    text-decoration: none;
+}
+.share-popover {
+    display: flex; 
+    flex-direction: row; 
+    gap: 1rem;
+    align-items: center;
+}
+#rightside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    text-align: center;
+}
+#pic {
+    height: 100%;
+}
+.dresser{
+    border-end-end-radius: 0!important;
+    border-start-end-radius: 0;
+    border-start-start-radius: 2em;
+    border-end-start-radius:2em;
+    height: 100%;
+    object-fit: cover;
+    @media screen and (max-width: 375px){
+        border-end-end-radius: 0em;
+        border-start-end-radius: 2em;
+        border-start-start-radius: 2em;
+        border-end-start-radius:0em;
+    }
+}
+#sub{
+    text-align: center;
+    margin: 1em;
+}
+picture{
+    height: 100%;
+    display: block;
+}
+h1,h4{
+    @media screen and (max-width: 375px){
+        font-size: small;
+    }    
+}
