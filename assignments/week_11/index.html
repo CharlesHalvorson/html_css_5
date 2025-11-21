@@ -11,23 +11,11 @@
     <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
     <title>Week_11</title>
     <style>
-        * {
-            max-width: 100%;
-            max-height: 100%;
-            
-        }
+        
         html{
             background-color: lightgray;
         }
         
-        .pic{
-            display: flex;
-            justify-content: center;       
-        }
-        picture{
-            display: flex;
-            justify-content: center;
-        }
         #mass{
             display: flex;
             /* height: auto; */
@@ -42,10 +30,12 @@
             flex-direction: row;
             box-shadow: 0px 8px 10px -5px rgb(95, 95, 95);
             font-family: "Montserrat", sans-serif;
-
+            height: 512px;
             @media screen and (max-width: 375px){
                 justify-content: center;
                 flex-direction: column;
+                align-items: center;
+                height: auto;
             }
             
         }
@@ -54,9 +44,7 @@
             --dark-gray: rgb(131, 113, 113);
         }
         .user-social {
-            margin-top: 0 ; /* Change the top-bottom margin to 0 */
-            margin-bottom: 0;
-            margin-left: 4em;
+            margin: 0; /* Change the top-bottom margin to 0 */
             width: 100%; /* Change this to 100% */
             
             border-radius: 20px;
@@ -64,33 +52,47 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            justify-self: left;
         }
         .user-profile {
             display: flex;
             flex-direction: row;
             justify-content: center; /* horizontal alignment when using rows */
             align-items: center;
-            gap: 20px;
+            /* gap: 20px; */
+
         }
         .user-image img {
             border-radius: 50%;
             width: 60px;
             height: 60px;
+            @media screen and (max-width: 375px){
+                width: 40px;
+                height: 40px;
+                margin-right: 5px;
+            }
         }
         .user-info {
             display: flex;
             flex-direction: column;
             justify-content: center; /* vertical alignment when using columns */
             align-items: flex-start;
-            gap: 8px;
+            margin-bottom: 0px;
+            
         }
         .user-info h4 {
             font-size: 2em;
+            @media screen and (max-width: 375px){
+                font-size: smaller;
+                margin-bottom: 0px;
+            }
         }
         .user-info a {
             color: #555;
             text-decoration: none;
+            @media screen and (max-width: 375px){
+                font-size: smaller;
+            }
+            
         }
         .user-info a:hover {
             text-decoration: underline;
@@ -107,9 +109,15 @@
             width: 60px;
             height: 60px;
             display: flex;
-            margin-right: 5em;
+            /* margin-right: 5em; */
             align-items: center;
             justify-content: center;
+            @media screen and (max-width: 375px){
+                padding: 5px;
+                width: 30px;
+                height: 30px;
+                font-size: smaller;
+            }
         }
         .share-icon i:hover {
             background-color: var(--dark-gray);
@@ -136,26 +144,45 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 4em;
+            margin: 1em;
+            text-align: center;
+        }
+        #pic {
+            height: 100%;
         }
         .dresser{
             border-end-end-radius: 0!important;
             border-start-end-radius: 0;
             border-start-start-radius: 2em;
             border-end-start-radius:2em;
+            height: 100%;
+            object-fit: cover;
+            @media screen and (max-width: 375px){
+                border-end-end-radius: 0em;
+                border-start-end-radius: 2em;
+                border-start-start-radius: 2em;
+                border-end-start-radius:0em;
+            }
         }
         #sub{
-            margin-left: 4em;
+            text-align: center;
+            margin: 1em;
+        }
+        picture{
+            height: 100%;
+            display: block;
+        }
+        h1,h4{
+            @media screen and (max-width: 375px){
+                font-size: small;
+            }    
         }
     </style>
 </head>
 <body>
     <div id="mass">
         <div id="pic">
-            <picture >
-                <source  srcset="dresser.jpg" media="(max-width: 375px)">
-                <img class="dresser" src="dresser-cropped.jpg" alt="dresser" 
-            </picture>
+            <picture><source  srcset="dresser.jpg" media="(max-width: 375px)"><img class="dresser" src="dresser-cropped.jpg" alt="dresser">
         </div>
         <div id="rightside">
             <div class="title">
@@ -173,7 +200,7 @@
                     </div>
                     <div class="user-info">
                         <h4>Jane Doe</h4>
-                        <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
+                        <p><a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
                     </div>
                 </div>
             <div class="share-icon">
