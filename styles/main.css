@@ -90,16 +90,17 @@ s{
   grid-area: header-bottom-nav;
   background-color: rgb(255, 255, 255);
   color: black;
+}
+
 @media screen and (prefers-color-scheme: dark){
+  #header-bottom-nav {
     color:rgb(0, 0, 0);
     background-color: rgb(0, 0, 0);
-
-}
+  }
 }
 
 #header-bottom-nav ul {
-  border-top: 1px solid 
-lightgrey;
+  border-top: 1px solid lightgrey;
   /* background-color: red; */
   display: none;
   align-items: flex-start;
@@ -107,8 +108,7 @@ lightgrey;
 }
 
 #header-bottom-nav ul li {
-  border-bottom: 1px solid 
-lightgrey;
+  border-bottom: 1px solid lightgrey;
   width: 100%;
 }
 
