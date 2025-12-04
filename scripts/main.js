@@ -1,88 +1,79 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var currentFileArr = document.location.href.match(/[^\/]+$/);
-    var currentFile = currentFileArr != null ? currentFileArr[0] : "index.html";
-    
-     // Display the header and footer consistently across all pages.
-     $('#header-placeholder').load('header.html', function() {
-        
-        // This code handles the hamburger menu
-        const mobileNav = $('#mobile-nav');
-        const headerBottomNav = $('#header-bottom-nav');
-        mobileNav.click(() => {
-            headerBottomNav.toggle()
-        });
+    var pathParts = window.location.pathname.split('/');
+    // The number of '../' needed is the number of directories deep the file is.
+    // We subtract 2 to account for the initial empty string from the leading '/'
+    // and the filename itself.
+    var depth = pathParts.length - 2;
+    if (depth < 0) depth = 0; // Sanity check for root case like '/'
+    var relativePath = '';
+    for (var i = 0; i < depth; i++) {
+        relativePath += '../';
+    }
 
-        // Close header-bottom-nav when a link is clicked
-        headerBottomNav.find('a').click(() => {
-            headerBottomNav.hide();
-        });
-
-        $('#header-bottom-nav a').each(function() {
-            // Check if the link's href matches the current URL
-            if (currentFile.indexOf($(this).attr('href')) >= 0) {
-                // Add the 'active' class to the matching link
-                $(this).addClass('active');
+    // Function to fix relative paths for images and links within a loaded element
+    function fixRelativePaths(element, relPath) {
+        element.find('img').each(function() {
+            const src = $(this).attr('src');
+            if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('data:')) {
+                $(this).attr('src', relPath + src);
             }
         });
 
-     });
-
-     $('#footer-placeholder').load('footer.html', function() {
-        $('#copyright-year').text(new Date().getFullYear());
-
-        // This code handles showing and hiding the go-to-top button.
-        // Source Google Gemini
-        // Get the link element
-        // let toTopLink = document.getElementById("to-top-link");
-
-        // 1. Show/Hide button on scroll
-        // window.onscroll = function() {
-            // A scroll threshold of 100px
-            // let scrollThreshold = 100;
-
-            // Check both documentElement and body for cross-browser compatibility
-            // if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-                // Using a class is cleaner than setting style.display directly
-                // toTopLink.classList.add("show");
-            // } else {
-                // toTopLink.classList.remove("show");
-            // }
-        // };
-
-        // 2. Smooth scroll to top on click
-        // toTopLink.onclick = function(event) {
-            // Prevent the default anchor behavior (#)
-            // event.preventDefault();
-            
-            // Scroll smoothly to the top of the page
-            // window.scrollTo({
-                // top: 0,
-                // behavior: 'smooth'
-            // });
-        // }
-     });
-    const mobileNav = document.getElementById('mobile-nav');
-    const navList = document.querySelector('#header-bottom-nav ul');
-
-    if (mobileNav) {
-        mobileNav.addEventListener('click', function() {
-            if (navList.style.display === 'none' || navList.style.display === '') {
-                navList.style.display = 'block';
-            } else {
-                navList.style.display = 'none';
+        element.find('a').each(function() {
+            const href = $(this).attr('href');
+            if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                $(this).attr('href', relPath + href);
             }
         });
     }
 
+    var currentFileArr = document.location.href.match(/[^\/]+$/);
+    var currentFile = currentFileArr != null ? currentFileArr[0] : "index.html";
+
+    // Display the header and footer consistently across all pages.
+    $('#header-placeholder').load(relativePath + 'header.html', function(response, status, xhr) {
+        if (status === "success") {
+            fixRelativePaths($(this), relativePath);
+
+            // This code handles the hamburger menu
+            const mobileNav = $('#mobile-nav');
+            const headerBottomNav = $('#header-bottom-nav');
+            headerBottomNav.hide(); // Start with nav hidden
+            mobileNav.click(() => {
+                headerBottomNav.toggle();
+            });
+
+            // Close header-bottom-nav when a link is clicked
+            headerBottomNav.find('a').click(() => {
+                headerBottomNav.hide();
+            });
+            
+            // Set the 'active' class on the correct navigation link
+            $('#header-bottom-nav a').each(function() {
+                var linkHref = $(this).attr('href');
+                var linkFile = linkHref.substring(linkHref.lastIndexOf('/') + 1);
+                if (linkFile === currentFile) {
+                    $(this).addClass('active');
+                }
+            });
+        }
+    });
+
+    $('#footer-placeholder').load(relativePath + 'footer.html', function(response, status, xhr) {
+        if (status === "success") {
+            fixRelativePaths($(this), relativePath);
+            $('#copyright-year').text(new Date().getFullYear());
+        }
+    });
+
+    // Carousel logic
     let carousel = document.querySelector('.carousel');
     if (carousel) {
         let currdeg  = 0;
-
         document.querySelector(".next").addEventListener("click", function() {
           currdeg = currdeg - 60;
           carousel.style.transform = "rotateY("+ currdeg +"deg)";
         });
-
         document.querySelector(".prev").addEventListener("click", function() {
           currdeg = currdeg + 60;
           carousel.style.transform = "rotateY("+ currdeg +"deg)";
@@ -92,12 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let carouselMobile = document.querySelector('.carousel-mobile');
     if (carouselMobile) {
         let currdegMobile  = 0;
-
         document.querySelector(".next-mobile").addEventListener("click", function() {
           currdegMobile = currdegMobile - 60;
           carouselMobile.style.transform = "rotateY("+ currdegMobile +"deg)";
         });
-
         document.querySelector(".prev-mobile").addEventListener("click", function() {
           currdegMobile = currdegMobile + 60;
           carouselMobile.style.transform = "rotateY("+ currdegMobile +"deg)";

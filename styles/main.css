@@ -533,3 +533,9 @@ box-sizing:border-box;
   background-color: var(--wa-color-brand-fill-loud);
   margin: 1.5rem;
 }
+#grid_table{
+  height: 450px;
+  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
