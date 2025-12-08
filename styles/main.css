@@ -335,15 +335,7 @@ footer{
   text-align: center;
   box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.674);
 }
-.company_logos{
-  width: 150px;
-  height: 150px;
-  background-color: white;
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 table{
   margin-left: auto;
   margin-right: auto;
@@ -534,8 +526,20 @@ box-sizing:border-box;
   margin: 1.5rem;
 }
 #grid_table{
-  height: 450px;
+  width: 300px;
   padding-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.company_logos{
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  text-align: center;
+  display: block;
+  border: solid black 2px;
 }
