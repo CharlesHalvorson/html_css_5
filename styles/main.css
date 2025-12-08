@@ -31,7 +31,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: linear-gradient(to  right, maroon, #363771);
-  padding-bottom: 80px;
+  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -219,9 +219,7 @@ footer{
   border-radius: 5px;
 }
 #buttons{
-  position: relative;
-  left: 50px;
-  top: 50px;
+  justify-self: center;
   color: white;
   border: solid white;
   background-color: #262320;
@@ -542,4 +540,50 @@ box-sizing:border-box;
   text-align: center;
   display: block;
   border: solid black 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header_subpage{
+  margin-top: 78px;
+  background-color: black;
+  font-family:"Baskervville" ;
+  border-top: white 2px solid;
+  border-radius: 0 0 5px 5px;
+  font-size:x-large;
+  text-align: center;
+  font-weight: 600;
+}
+#form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  width: 381px;
+  margin: 3em 0;
+}
+#aboutus_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  max-width: 485px;
+  background-image:url(../images_main/3d-render-laptop-notebook-electronic-device-with-illuminated-with-neon-light_204298-982.jpg);
+  margin: 3em;
+}
+#aboutus_container h1{
+  font-size: x-large;
+  border: 2px solid white;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+  width: 485px;
+  justify-content: center;
+}
+#aboutus_container h2{
+  font-size: large;
+  font-weight: normal;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.603);
+  border: 2px solid white;
+  border-radius: 0 0 5px 5px;
+  line-height: 1.5em;
 }
