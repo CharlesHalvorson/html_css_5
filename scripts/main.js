@@ -1,95 +1,121 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var pathParts = window.location.pathname.split('/');
-    // The number of '../' needed is the number of directories deep the file is.
-    // We subtract 2 to account for the initial empty string from the leading '/'
-    // and the filename itself.
-    var depth = pathParts.length - 2;
-    if (depth < 0) depth = 0; // Sanity check for root case like '/'
-    var relativePath = '';
-    for (var i = 0; i < depth; i++) {
-        relativePath += '../';
-    }
+    // Determine the base path for the project. On GitHub Pages, projects are in a
+    // subdirectory (e.g., /repo-name/), while on other platforms like Firebase,
+    // they are at the root (/).
+    const isGitHubPages = window.location.hostname.endsWith('github.io');
+    const repoName = isGitHubPages ? window.location.pathname.split('/')[1] || '' : '';
+    const basePath = isGitHubPages ? `/${repoName}/` : '/';
 
-    // Function to fix relative paths for images and links within a loaded element
-    function fixRelativePaths(element, relPath) {
-        element.find('img').each(function() {
-            const src = $(this).attr('src');
-            if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('data:')) {
-                $(this).attr('src', relPath + src);
+    /**
+     * Creates an absolute path from a path relative to the project root.
+     * @param {string} path - The relative path.
+     * @returns {string} The absolute path.
+     */
+    const resolvePath = (path) => {
+        if (!path || typeof path !== 'string') {
+            return '';
+        }
+        // If path is already a full URL, absolute, a special link, or data URI, return as is.
+        if (path.startsWith('http') || path.startsWith('/') || path.startsWith('#') || path.startsWith('mailto:') || path.startsWith('tel:') || path.startsWith('data:')) {
+            return path;
+        }
+        // For relative paths, prepend the base path.
+        return basePath + path;
+    };
+
+    /**
+     * Traverses a loaded HTML fragment and corrects the paths of assets like images,
+     * scripts, and links to be absolute from the project root.
+     * @param {jQuery} element - The jQuery element containing the loaded HTML.
+     */
+    function fixAssetPaths(element) {
+        element.find('img, script, source').each(function() {
+            const el = $(this);
+            const src = el.attr('src');
+            if (src) {
+                el.attr('src', resolvePath(src));
             }
         });
-
-        element.find('a').each(function() {
-            const href = $(this).attr('href');
-            if (href && !href.startsWith('http') && !href.startsWith('/') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
-                $(this).attr('href', relPath + href);
+        element.find('a, link').each(function() {
+            const el = $(this);
+            const href = el.attr('href');
+            if (href) {
+                el.attr('href', resolvePath(href));
             }
         });
     }
 
-    var currentFileArr = document.location.href.match(/[^\/]+$/);
-    var currentFile = currentFileArr != null ? currentFileArr[0] : "index.html";
-
-    // Display the header and footer consistently across all pages.
-    $('#header-placeholder').load(relativePath + 'header.html', function(response, status, xhr) {
+    // Load header
+    $('#header-placeholder').load(resolvePath('header.html'), function(response, status, xhr) {
         if (status === "success") {
-            fixRelativePaths($(this), relativePath);
+            fixAssetPaths($(this));
 
-            // This code handles the hamburger menu
+            // --- Post-load logic for header ---
+
+            // Hamburger menu functionality
             const mobileNav = $('#mobile-nav');
             const headerBottomNav = $('#header-bottom-nav');
-            headerBottomNav.hide(); // Start with nav hidden
-            mobileNav.click(() => {
-                headerBottomNav.toggle();
-            });
-
-            // Close header-bottom-nav when a link is clicked
-            headerBottomNav.find('a').click(() => {
+            if (mobileNav.length && headerBottomNav.length) {
                 headerBottomNav.hide();
-            });
-            
-            // Set the 'active' class on the correct navigation link
+                mobileNav.on('click', () => {
+                    headerBottomNav.toggle();
+                });
+                // Hide menu when a link inside it is clicked
+                headerBottomNav.find('a').on('click', () => {
+                    headerBottomNav.hide();
+                });
+            }
+
+            // Highlight the active navigation link
+            const currentPath = window.location.pathname;
             $('#header-bottom-nav a').each(function() {
-                var linkHref = $(this).attr('href');
-                var linkFile = linkHref.substring(linkHref.lastIndexOf('/') + 1);
-                if (linkFile === currentFile) {
-                    $(this).addClass('active');
+                const link = $(this);
+                const linkHref = link.attr('href');
+                if (linkHref) {
+                    const resolvedLinkHref = resolvePath(linkHref);
+                    // Check if the current path ends with the resolved link path.
+                    // This handles cases like /repo/ and /repo/index.html both matching.
+                    if (currentPath === resolvedLinkHref || (currentPath + 'index.html') === resolvedLinkHref || currentPath === (resolvedLinkHref + 'index.html')) {
+                        link.addClass('active');
+                    }
                 }
             });
         }
     });
 
-    $('#footer-placeholder').load(relativePath + 'footer.html', function(response, status, xhr) {
+    // Load footer
+    $('#footer-placeholder').load(resolvePath('footer.html'), function(response, status, xhr) {
         if (status === "success") {
-            fixRelativePaths($(this), relativePath);
-            $('#copyright-year').text(new Date().getFullYear());
+            fixAssetPaths($(this));
+            const yearSpan = $('#copyright-year');
+            if (yearSpan.length) {
+                yearSpan.text(new Date().getFullYear());
+            }
         }
     });
 
-    // Carousel logic
-    let carousel = document.querySelector('.carousel');
-    if (carousel) {
-        let currdeg  = 0;
-        document.querySelector(".next").addEventListener("click", function() {
-          currdeg = currdeg - 60;
-          carousel.style.transform = "rotateY("+ currdeg +"deg)";
-        });
-        document.querySelector(".prev").addEventListener("click", function() {
-          currdeg = currdeg + 60;
-          carousel.style.transform = "rotateY("+ currdeg +"deg)";
-        });
+    // --- Carousel Logic ---
+    function setupCarousel(containerSelector, prevSelector, nextSelector) {
+        const carousel = document.querySelector(containerSelector);
+        if (carousel) {
+            let currdeg = 0;
+            const nextButton = document.querySelector(nextSelector);
+            const prevButton = document.querySelector(prevSelector);
+            if (nextButton) {
+                nextButton.addEventListener("click", () => {
+                    currdeg -= 60;
+                    carousel.style.transform = `rotateY(${currdeg}deg)`;
+                });
+            }
+            if (prevButton) {
+                prevButton.addEventListener("click", () => {
+                    currdeg += 60;
+                    carousel.style.transform = `rotateY(${currdeg}deg)`;
+                });
+            }
+        }
     }
 
-    let carouselMobile = document.querySelector('.carousel-mobile');
-    if (carouselMobile) {
-        let currdegMobile  = 0;
-        document.querySelector(".next-mobile").addEventListener("click", function() {
-          currdegMobile = currdegMobile - 60;
-          carouselMobile.style.transform = "rotateY("+ currdegMobile +"deg)";
-        });
-        document.querySelector(".prev-mobile").addEventListener("click", function() {
-          currdegMobile = currdegMobile + 60;
-          carouselMobile.style.transform = "rotateY("+ currdegMobile +"deg)";
-        });
-    }
+    setupCarousel('.carousel', '.prev', '.next');
+    setupCarousel('.carousel-mobile', '.prev-mobile', '.next-mobile');
 });
