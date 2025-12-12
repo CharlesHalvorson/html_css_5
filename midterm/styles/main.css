@@ -86,8 +86,6 @@ body{
     width: 100%;
 }
 .btn {
-    display: flex;
-    flex-wrap: wrap;
     padding: 5px;
     border: 2px solid white;
     color: white;
@@ -191,14 +189,35 @@ footer a:hover {
         text-align: left;
     }
     
-    #about{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+    
 }
 @media (min-width: 900px){
     #footer-bottom{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
+    }
+    #jumbotron{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #jumbotron-image{
+        order: 2;
+    }
+    #jumbotron-text{
+        order: 1;
+        text-align: left;
+    }
+}
+@media (min-width: 705px){
+    #cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    article{
+        text-align: left;
+        padding: 0px 5px 0px 5px;
+    }
+    main h1 {
+        text-align: left;
+    }
 }
