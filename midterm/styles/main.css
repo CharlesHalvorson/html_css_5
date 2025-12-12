@@ -1,15 +1,19 @@
 :root{
---BlueA:hsl(256, 26%, 20%);
---BlueB: hsl(216, 30%, 68%);
---GrayA: hsl(270, 9%, 17%);
---GrayB: hsl(273, 4%, 51%);
---GrayC: hsl(0, 0%, 98%);
+--GrayDark: hsl(270, 9%, 17%);
+--GrayMedium: hsl(273, 4%, 51%);
+--GrayLight: hsl(0, 0%, 98%);
 }
-*{
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body{
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: normal;
 }
+
 #mobile-nav{
     display:inline-block;
     padding: 3px;
@@ -18,19 +22,19 @@
 }
 #header-mobile-nav {
     padding: 24px 16px 16px;
-    display: flex; /* Places the contact button and mobile nav on same horizontal line */
-    justify-content: space-between; /* Places the contact button on left and mobile navigation on right */
-    align-items: center; /* Vertically centers the contact button with the mobile navigation */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 #mobile-nav {
-    font-size: 1em; /* Makes the navigation icon bigger */
-    margin: 0 0.25em; /* Adds space to the left/right of the mobile nav */
+    font-size: 1em; 
+    margin: 0 0.25em; 
     cursor: pointer;
 }
 
 #header-bottom-nav {
-    background-color: var(--BlueA);
+    background-color: var(--GrayDark);
     position: absolute;
     top: 70px;
     left: 0;
@@ -38,204 +42,163 @@
     width: 100%;
 }
 
-/* #header-bottom-nav li {
-    border-bottom: 1px solid ;
-} */
-
 #header-bottom-nav a {
-    font-size: 1.2em; /* Increases font-size 20% */
-    display: block; /* A tags are inline elements by default. Making this a block allows you to add top/bottom padding and margin, and makes it full width */
+    font-size: 1.2em;
+    display: block;
     padding: 20px;
     text-decoration:none;
     color: white;
     font-weight: 700;
     text-align: center;
-    border: solid var(--BlueA) 2px;
-    font-family: "DM Serif Display";
+    border: solid var(--GrayDark) 2px;
 }
 
 #header-bottom-nav .active, #header-bottom-nav a:hover {
     border: solid white 2px;
 }
-#jumbotron {
+#jumbotron-text {
     padding: 100px 40px;
     text-align: center;
-    background-color: var(--BlueA);
+    background-color: var(--GrayDark);
     color: white;
-    font-family: "DM Serif Display";
 }
-#jumbotron h1 {
+#jumbotron-text h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    font-family: "DM Serif Display";
 }
-#jumbotron h2 {
+#jumbotron-text h2 {
     font-size: 1.7em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    font-family: "DM Serif Display";
 }
-#jumbotron p {
+#jumbotron-text p {
     font-size: 1.4em;
     line-height: 1.4em;
     font-weight: 300;
     margin: 30px 0;
-    font-family: "DM Serif Display";
 }
-
+#family{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 .btn {
-    padding: 12px 24px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
     border: 2px solid white;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-family: "DM Serif Display";
 }
-#jumbotron2 {
-    padding: 100px 40px;
+main {
+    padding: 0 40px 50px;
     text-align: center;
     background-color: white;
     color: white;
-    font-family: "DM Serif Display";
 }
-#jumbotron2 h1 {
+main h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    color: black;
-    font-family: "DM Serif Display";
+    color: var(--GrayDark);
 }
-#jumbotron2 h2 {
+main h2 {
     font-size: 1.7em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    color: black;
-    font-family: "DM Serif Display";
+    color: var(--GrayDark);
 }
-#jumbotron2 p {
+main p {
     font-size: 1em;
     line-height: 1.4em;
     font-weight: 300;
     margin: 30px 0;
-    color: var(--GrayB);
-    font-family: "DM Serif Display";
+    color: var(--GrayMedium);
 }
-footer {
-    background-color: lightgrey;
+#about {
+    margin: 0 auto 50px;
     text-align: center;
-    padding: 100px 40px;
-    font-family: "DM Serif Display";
-}
-
-footer h3 {
-    color: var(--GrayB);
-    margin: 20px 0;
-    font-family: "DM Serif Display";
-}
-
-footer a {
-    color: var(--gray-light);
-    text-decoration: none;
-    padding: 5px;
-    display: inline-block;
-    font-family: "DM Serif Display";
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-main{
-    text-align: center;
-    padding: 100px 40px;
-    font-family: "DM Serif Display";
-}
-main h2 {
-    font-size: 2em;
-    line-height: 1.2em;
-    font-weight: 500;
-    margin: 40px 0;
-    font-family: "DM Serif Display";
-}
-main p {
-    color: var(--gray-medium);
-    font-size: 1.2em;
-    line-height: 1.6em;
-    font-weight: 300;
-    margin: 20px 0;
-    font-family: "DM Serif Display";
-}
-main div h2{
-    font-size: 2em;
-    line-height: 1.2em;
-    font-weight: 500;
-    margin: 40px 0;
-    font-family: "DM Serif Display";
-}
-#line{
-    border-bottom: solid var(--GrayB);
-    display:flex;
-    margin: 100px 100px 0px 100px;
-    font-family: "DM Serif Display";
-}
-#line2{
-    border-bottom: solid var(--GrayB);
-    display:flex;
-    margin: 10px 10px 0px 10px;
-    font-family: "DM Serif Display";
-}
-.logos{
-    margin: 7px;
-}
-.dm-serif-display-regular {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .dm-serif-display-regular-italic {
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  #family{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-  #jumbotron3 {
-    margin: 0 auto;
-    text-align: center;
-    background-color: var(--BlueA);
+    background-color: var(--GrayDark);
     color: white;
-    font-family: "DM Serif Display";
     width: 90%;
     height: 100%;
     padding-bottom: 2em;
-    padding: 90px 0;
+    padding: 50px 0 80px;
 }
-#jumbotron3 h1 {
+#about h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    font-family: "DM Serif Display";
 }
-#jumbotron3 h2 {
+#about h2 {
     font-size: 1.7em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
-    font-family: "DM Serif Display";
 }
-#jumbotron3 p {
+#about p {
     font-size: 1.4em;
     line-height: 1.4em;
     font-weight: 300;
     margin: 30px 0;
-    font-family: "DM Serif Display";
+}
+footer {
+    background-color: var(--GrayLight);
+    text-align: center;
+    padding: 100px 40px;
+}
+
+footer h3 {
+    color: var(--GrayDark);
+    margin: 20px 0;
+}
+
+footer a {
+    color: var(--GrayMedium);
+    padding: 5px 0px 5px 0px;
+    text-decoration: none;
+    display: inline-block;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.logo{
+    margin: 7px;
+    color: var(--GrayDark)
+}
+.line{
+    border-bottom: 1px solid var(--GrayMedium);
+    display:flex;
+    margin: 50px 0;
+}
+@media (min-width: 600px){
+    #footer-bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+      }
+    #footer-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    #about{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 900px){
+    #footer-bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
 }

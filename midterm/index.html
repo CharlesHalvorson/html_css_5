@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,15 +14,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="scripts/main.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=DM+Serif+Display:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=DM+Serif+Display:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Insure landing page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
   <body>
     <header>
@@ -31,101 +24,117 @@
           <nav id="header-mobile-nav">
               <div id="header-logo">
                 <a href="#">
-                  <img src="images/logo.svg"
-                  alt="Blogr Logo">
+                  <img src="images/logo.svg" alt="Insure SVG Logo">
                 </a>
               </div>
               <div id="mobile-nav"><i class="fa-solid fa-bars"></i></div>
           </nav>
           <nav id="header-bottom-nav" style="display: none">
-          <ul>
-              <li><a href="#">HOW WE WORK</a></li>
-              <li><a href="#">BLOG</a></li>
-              <li><a href="#">ACCOUNT</a></li>
-              <li><a href="#">VIEW PLANS</a></li>
-          </ul>
+            <ul>
+                <li><a href="#">HOW WE WORK</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">ACCOUNT</a></li>
+                <li><a href="#">VIEW PLANS</a></li>
+            </ul>
           </nav>
-          <img id="family" src="images/image-intro-mobile.jpg" alt="picture of family">
       </div>
 
       <div id="jumbotron">
-        <h1>Humanizing your insurance</h1>
-        <p>Get your life insurance coverage easier and faster. We blend our expertise 
-          and technology to help you find the plan that’s right for you. Ensure you 
-          and your loved ones are protected.</p>
-
-        <a href="#" class="btn">View plans</a>
+        <div id="jumbotron-image">
+          <img id="family" src="images/image-intro-mobile.jpg" alt="picture of family">
+        </div>
+        <div id="jumbotron-text">
+          <h1>Humanizing your insurance</h1>
+          <p>Get your life insurance coverage easier and faster. We blend our expertise 
+            and technology to help you find the plan that's right for you. Ensure you 
+            and your loved ones are protected.</p>
+          <a href="#" class="btn">View plans</a>
+        </div>
       </div>
-
     </header>
 
-    <p id="line"></p>
-    <div id="jumbotron2">
-      <h1>We’re different</h1>
+    <p class="line"></p>
 
-      <img src="images/icon-snappy-process.svg" alt="snappy process">
-      <h2>Snappy Process</h2>
-      <p>Our application process can be completed in minutes, not hours. Don’t get 
-    stuck filling in tedious forms.</p>
+    <main>
+      <h1>We're different</h1>
 
-    
-      <img src="images/icon-affordable-prices.svg" alt="affordable prices">
-      <h2>Affordable Prices</h2>
-      <p>We don’t want you worrying about high monthly costs. Our prices may be low, 
-    but we still offer the best coverage possible.</p>
+      <div id="cards">
+        <article>
+          <img src="images/icon-snappy-process.svg" alt="snappy process">
+          <h2>Snappy Process</h2>
+          <p>Our application process can be completed in minutes, not hours. Don't get stuck filling in tedious forms.</p>
+        </article>
+      
+        <article>
+          <img src="images/icon-affordable-prices.svg" alt="affordable prices">
+          <h2>Affordable Prices</h2>
+          <p>We don't want you worrying about high monthly costs. Our prices may be low, but we still offer the best coverage possible.</p>
+        </article>
 
-      <img src="images/icon-people-first.svg" alt="people first icon">
-      <h2>People First</h2>
-      <p>Our plans aren’t full of conditions and clauses to prevent payouts. We make 
-    sure you’re covered when you need it.</p>
-    </div>
-    <div id="jumbotron3">
+        <article>
+          <img src="images/icon-people-first.svg" alt="people first icon">
+          <h2>People First</h2>
+          <p>Our plans aren't full of conditions and clauses to prevent payouts. We make sure you're covered when you need it.</p>
+        </article>
+      </div>
+
+    </main>
+
+    <div id="about">
       <h1>Find out more about how we work</h1>
       <a href="#" class="btn">How we work</a>
     </div>
-    
-
-    
-
-
 
     <footer>
-      <img src="images/logo.svg" alt="Insure Logo">
-      <div >
-        <img class="logos" src="images/icon-facebook.svg" alt="facebook">
-        <img class="logos" src="images/icon-twitter.svg" alt="twitter">
-        <img class="logos" src="images/icon-pinterest.svg" alt="pinterest">
-        <img class="logos" src="images/icon-instagram.svg" alt="instagram">
+      <div id="footer-top">
+        <img src="images/logo.svg" alt="Insure SVG Logo">
+        <div id="social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
       </div>
-      <p class="line2"></p>
-      <h3>Our company</h3>
-      <ul>
-        <li><a href="#">How we work</a></li>
-        <li><a href="#">Why Insure?</a></li>
-        <li><a href="#">View plans</a></li>
-        <li><a href="#">Reviews</a></li>
-      </ul>
-      <h3>Help me</h3>
-      <ul>
+      <p class="line"></p>
+      <div id="footer-bottom">
+        <div class="col">
+          <h3>Our company</h3>
+          <ul>
+            <li><a href="#">How we work</a></li>
+            <li><a href="#">Why Insure?</a></li>
+            <li><a href="#">View plans</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
 
-        
-        <li><a href="#"></a>FAQ</li>
-        <li><a href="#">Terms of use</a></li>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">Cookies</a></li>
-      </ul>
-      <h3>Contact</h3>
-      <ul>
-        <li><a href="#">Sales</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Live chat</a></li>
-      </ul>
-      <h3>Others</h3>
-      <ul>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Press</a></li>
-        <li><a href="#">Licenses</a></li>
-      </ul>
+        <div class="col">
+          <h3>Help me</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Live chat</a></li>
+          </ul>
+        </div>
+
+        <div class="col">
+          <h3>Others</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Licenses</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
